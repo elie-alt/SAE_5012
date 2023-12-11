@@ -13,6 +13,7 @@
         "easycorp/easyadmin-bundle": "^4.8",
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^1.24",
+        "sensio/framework-extra-bundle": "^6.2",
         "symfony/asset": "6.0.*",
         "symfony/console": "6.0.*",
         "symfony/doctrine-messenger": "6.0.*",
