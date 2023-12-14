@@ -4,6 +4,16 @@
 {% endblock %}
 
 {% block body %}
+	{% if app.user %}
+                                <div>
+                                        Bonjour {{ app.user.email }} <a class="btn btn-sm btn-danger" href="{{ path('app_logout') }}">Déconnexion</a>
+                                </div>
+                        {% else %}
+                                <div>
+                                        <a class="btn btn-sm btn-primary" href="{{ path('app_register') }}">S'inscrire</a>
+                                        <a class="btn btn-sm btn-success" href="{{ path('app_login') }}">Se connecter</a>
+                                </div>
+                        {% endif %}
 	<div class="">
 		<div class="">
 			<div class="">
@@ -13,4 +23,11 @@
             </div>
 		</div>
 	</div>
+	    {% if is_granted('ROLE_USER') %}
+            Role User
+        {% endif %}
+		{% if is_granted('ROLE_ADMIN') %}
+            Role Admin
+        {% endif %}
+
 {% endblock %}
