@@ -1,2 +1,4 @@
 composer install
+npm install --force
+npm run build
 php -S localhost:8000 -t public/
