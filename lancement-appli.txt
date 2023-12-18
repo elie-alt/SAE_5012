@@ -1,8 +1,19 @@
 composer install
 npm install --force
 npm run build
+php/bin console doctrine:database:create
 php bin/console doctrine:migrations:migrate
+<<<<<<< HEAD
 php -S localhost:8000 -t public/
 
 
 
+=======
+php bin/console doctrine:fixtures:load
+php -S localhost:8000 -t public/
+mdp_USER: 123456U
+mdp_ADMIN: 123456A
+
+
+https://www.youtube.com/playlist?list=PLkHw7J3J2iaoIowz7LIImIFHkMJzO_84F
+>>>>>>> 22bf8e214958b839b84fc58dcb35eb56fd52560f
