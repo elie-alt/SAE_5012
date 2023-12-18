@@ -1,70 +1,64 @@
-{# {% extends 'base.html.twig' %}
-
-{% block title %}Register{% endblock %}
-
-{% block body %}
-    <h1>Register</h1>
-
-    {{ form_errors(registrationForm) }}
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-{% endblock %} #}
-
-
 {% extends 'base.html.twig' %}
 {% block title %}
-    Log in!
-    
+	Log in!
+
 {% endblock %}
 {% block body %}
-    <form method="post">
-        <div class="section">
-            <div class="container">
-                <div class="row full-height justify-content-center">
-                    <div class="col-12 text-center align-self-center py-5">
-                        <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                            <h6 class="mb-0 pb-3">
-                                <span>
-                                    Log In
-                                    								
-                                </span>
-                                <span>
-                                    Sign Up
-                                </span>
-                            </h6>
-                            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
-                            <label for="reg-log"></label>
-                            <div class="card-3d-wrap mx-auto">
-                                <div class="card-3d-wrapper">
-                                    <div class="card-front">
-                                        <div class="center-wrap">
-                                            <div class="section text-center">
-                                                <h1 class="h3 mb-3 font-weight-normal">
-                                                    Please sign in v3
-                                                </h1>
-                                                
-                                                <div class="card-back">
-                                                    <div class="center-wrap">
-                                                        <div class="section text-center">
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                {# <div {{ react_component('MyLoginForm') }}></div> #}
-            {% endblock %}
+	<form method="post">
+		<div class="section">
+			<div class="container">
+				<div class="row full-height justify-content-center">
+					<div class="col-12 text-center align-self-center py-5">
+						<div class="section pb-5 pt-5 pt-sm-2 text-center">
+							<h6 class="mb-0 pb-3">
+								<span>Sign Up</span>
+								<span>
+									Log In
+								</span>
+							</h6>
+							<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+							<label for="reg-log"></label>
+							<div class="card-3d-wrap mx-auto">
+								<div class="card-3d-wrapper">
+									<div class="card-front">
+										<div class="center-wrap">
+											<div class="section text-center">
+												<h1 class="h3 mb-3 font-weight-normal">
+													s'inscrire
+												</h1>
+												{{ form_errors(registrationForm) }}
+
+												{{ form_start(registrationForm) }}
+												{{ form_row(registrationForm.email) }}
+												{{ form_row(registrationForm.plainPassword) }}
+												{{ form_row(registrationForm.agreeTerms) }}
+
+												<button type="submit" class="btn">Register</button>
+												{{ form_end(registrationForm) }}
+												<div class="card-back">
+													<div class="center-wrap">
+														<div class="section text-center"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-back">
+										<div class="center-wrap">
+											<div class="section text-center">
+												<h4 class="mb-4 pb-3">
+													Connectez vous
+												</h4>
+												<a href="{{ path('app_login') }}" class="text-decoration-none">
+													Se connecter
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+				{# <div {{ react_component('MyLoginForm') }}></div> #}
+			{% endblock %}
