@@ -49,15 +49,15 @@ class DashboardController extends AbstractDashboardController
     }
 
 
-    public function configureUserMenu(UserInterface $user): UserMenu
-    {
-        if (!$user instanceof User) {
-            throw new \Exception('Wrong user');
-        }
-        return parent::configureUserMenu($user)
-            ->setAvatarUrl($user->getAvatarUrl())
-            ->addMenuItems([
-                MenuItem::linkToUrl('My Profile', 'fas fa-user', $this->generateUrl('app_profile_show'))
-            ]);
-    }
+    // public function configureUserMenu(UserInterface $user): UserMenu
+    // {
+    //     if (!$user instanceof User) {
+    //         throw new \Exception('Wrong user');
+    //     }
+    //     return parent::configureUserMenu($user)
+    //         ->setAvatarUrl($user->getAvatarUrl())
+    //         ->addMenuItems([
+    //             MenuItem::linkToUrl('My Profile', 'fas fa-user', $this->generateUrl('app_profile_show'))
+    //         ]);
+    // }
 }
