@@ -12,6 +12,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 use App\Entity\User;
+use App\Entity\Article;
+use App\Entity\Category;
+
 
 class DashboardController extends AbstractDashboardController
 {
@@ -20,11 +23,11 @@ class DashboardController extends AbstractDashboardController
 
     }
 
-    #[IsGranted('ROLE_ADMIN')]
+    // #[IsGranted('ROLE_ADMIN')]
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-        return $this->adminUrlGenerator->setController(ArticleCrudController::class)->generateUrl();
+        $url = $this->adminUrlGenerator->setController(ArticleCrudController::class)->generateUrl();
         return $this->redirect($url);
     }
 
@@ -42,20 +45,8 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::subMenu('Articles', 'fas fa-newspaper')->setSubItems([
             MenuItem::linkToCrud('Tous les articles', 'fas fa-newspaper', Article::class),
-            MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Article::class)->setAction(Crud::PAGE_NEW)
+            MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Article::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Ajouter', 'fas fa-list', Category::class)
         ]);
     }
-
-
-    // public function configureUserMenu(UserInterface $user): UserMenu
-    // {
-    //     if (!$user instanceof User) {
-    //         throw new \Exception('Wrong user');
-    //     }
-    //     return parent::configureUserMenu($user)
-    //         ->setAvatarUrl($user->getAvatarUrl())
-    //         ->addMenuItems([
-    //             MenuItem::linkToUrl('My Profile', 'fas fa-user', $this->generateUrl('app_profile_show'))
-    //         ]);
-    // }
 }
