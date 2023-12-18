@@ -175,63 +175,7 @@ h6 span{
   outline: none;
   box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
 }
-.input-icon {
-  position: absolute;
-  top: 0;
-  left: 18px;
-  height: 48px;
-  font-size: 24px;
-  line-height: 48px;
-  text-align: left;
-  color: #ffeba7;
-  -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
 
-.form-group input:-ms-input-placeholder  {
-  color: #c4c3ca;
-  opacity: 0.7;
-  -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-.form-group input::-moz-placeholder  {
-  color: #c4c3ca;
-  opacity: 0.7;
-  -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-.form-group input:-moz-placeholder  {
-  color: #c4c3ca;
-  opacity: 0.7;
-  -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-.form-group input::-webkit-input-placeholder  {
-  color: #c4c3ca;
-  opacity: 0.7;
-  -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-.form-group input:focus:-ms-input-placeholder  {
-  opacity: 0;
-  -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-.form-group input:focus::-moz-placeholder  {
-  opacity: 0;
-  -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-.form-group input:focus:-moz-placeholder  {
-  opacity: 0;
-  -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-.form-group input:focus::-webkit-input-placeholder  {
-  opacity: 0;
-  -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
 
 .btn{  
   border-radius: 4px;

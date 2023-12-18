@@ -1,86 +1,93 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Log in!
+{% block title %}
+    Log in!
+                                        
+                                    
+                                
+                            
+                        
+                    
+                
+            
+        
+    
 {% endblock %}
-
 {% block body %}
-{# 
-	<form method="post">
-		{% if error %}
-			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-		{% endif %}
-
-		{% if app.user %}
-			<div class="mb-3">
-				You are logged in as
-				{{ app.user.userIdentifier }},
-				<a href="{{ path('app_logout') }}">Logout</a>
-			</div>
-		{% endif %}
-		<div class="section">
-			<div class="container">
-				<div class="row full-height justify-content-center">
-					<div class="col-12 text-center align-self-center py-5">
-						<div class="section pb-5 pt-5 pt-sm-2 text-center">
-							<h6 class="mb-0 pb-3">
-								<span>Log In
-								</span>
-								<span>Sign Up</span>
-							</h6>
-							<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-							<label for="reg-log"></label>
-							<div class="card-3d-wrap mx-auto">
-								<div class="card-3d-wrapper">
-									<div class="card-front">
-										<div class="center-wrap">
-											<div class="section text-center">
-												<h1 class="h3 mb-3 font-weight-normal">Please sign in v3</h1>
-												<label for="inputEmail">Email</label>
-												<input type="email" todo value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-												<label for="inputPassword">Password</label>
-												<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-												<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-												<button class="btn btn-lg btn-primary" type="submit">
-													Sign in
-												</button>
-												<p class="mb-0 mt-4 text-center">
-													<a href="#0" class="link">Forgot your password?</a>
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="card-back">
-										<div class="center-wrap">
-											<div class="section text-center">
-												<h4 class="mb-4 pb-3">Sign Up</h4>
-												<div class="form-group">
-													<input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
-													<i class="input-icon uil uil-user"></i>
-												</div>
-												<div class="form-group mt-2">
-													<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
-													<i class="input-icon uil uil-at"></i>
-												</div>
-												<div class="form-group mt-2">
-													<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-													<i class="input-icon uil uil-lock-alt"></i>
-												</div>
-												<a href="#" class="btn mt-4">submit</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</form> #}
-	
-				<div {{ react_component('MyLoginForm') }}></div>
-
-
-{% endblock %}
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+        <div class="section">
+            <div class="container">
+                <div class="row full-height justify-content-center">
+                    <div class="col-12 text-center align-self-center py-5">
+                        <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                            <h6 class="mb-0 pb-3">
+                                <span>
+                                    Log In                               
+                                </span>
+                                <span>
+                                    Sign Up
+                                </span>
+                            </h6>
+                            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                            <label for="reg-log"></label>
+                            <div class="card-3d-wrap mx-auto">
+                                <div class="card-3d-wrapper">
+                                    <div class="card-front">
+                                        <div class="center-wrap">
+                                            <div class="section text-center">
+                                                {% if app.user %}
+                                                    <div class="mb-3">
+                                                        Connecté en tant que
+														
+                                                        {{ app.user.userIdentifier }}
+                                                        <a href="{{ path('app_logout') }}">
+                                                            Se déconnecter
+															
+                                                        </a>
+                                                    </div>
+                                                {% endif %}
+                                                <h1 class="h3 mb-3 font-weight-normal">
+                                                    Connectez-vous :
+													
+                                                </h1>
+                                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="Votre Email" class="form-control mb-3" autocomplete="email" required autofocus>
+                                                    <input type="password" name="password" id="inputPassword" class="form-control mb-3" placeholder="Votre Mot de passe" autocomplete="current-password" required>
+                                                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                                            <button class="btn btn-lg btn-primary" type="submit">
+                                                                Se connecter                                                       
+                                                            </button>
+                                                            <p class="mb-0 mt-4 text-center">
+                                                                <a href="#0" class="link">
+                                                                    Mot de passe oublié                                                               
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-back">
+                                                    <div class="center-wrap">
+                                                        <div class="section text-center">
+                                                            <h4 class="mb-4 pb-3">
+                                                                Inscrivez-vous                                                  
+                                                            </h4>
+                                                            <a href="{{ path('app_register') }}" class="text-decoration-none">
+                                                                S'inscrire                                               
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            {# <div {{ react_component('MyLoginForm') }}></div> #}
+            {% endblock %}
+            
