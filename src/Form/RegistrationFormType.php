@@ -25,15 +25,14 @@ class RegistrationFormType extends AbstractType
             'class' => 'form-control mb-3',
         ],
     ])
-
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Vous devez accepter les termes.',
-                    ]),
-                ],
-            ])
+            // ->add('agreeTerms', CheckboxType::class, [
+            //     'mapped' => false,
+            //     'constraints' => [
+            //         new IsTrue([
+            //             'message' => 'Vous devez accepter les termes.',
+            //         ]),
+            //     ],
+            // ])
     ->add('plainPassword', PasswordType::class, [
         'label' => false,
         'mapped' => false,
