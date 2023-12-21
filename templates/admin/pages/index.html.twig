@@ -1,3 +1,12 @@
 {# templates/admin/pages/index.html.twig #}
 
-{% extends '@EasyAdmin/page/content.html.twig' %}
+{% extends '@!EasyAdmin/page/content.html.twig' %}
+
+{% block content %}
+    {# Votre contenu pour la page d'index ici #}
+    <h1>Page d'index personnalisée</h1>
+    <div>
+        {{ parent() }}
+        {# Si nécessaire, vous pouvez ajouter du contenu supplémentaire ici #}
+    </div>
+{% endblock %}
