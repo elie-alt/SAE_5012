@@ -24,4 +24,15 @@ class ArticleController extends AbstractController
             'article' => $article,
         ]);
     }
+
+    #[Route('/articles', name: 'articles_show')]
+    public function show_articles(?Article $article): Response
+    {
+        if (!$article){
+            return $this->redirectToRoute('app_home');
+        }
+        return $this->render('article/index.html.twig', [
+            'article' => $article,
+        ]);
+    }
 }
