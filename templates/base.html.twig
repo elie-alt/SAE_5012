@@ -16,6 +16,10 @@
     </head>
     <body>
         <a href="{{path('admin')}}" >Dashboard</a>
-        {% block body %}{% endblock %}
+        {% block body %}
+            <div id="article-list">
+                {% include 'article/list.html.twig' with { articles } %}
+            </div>
+        {% endblock %}
     </body>
 </html>
