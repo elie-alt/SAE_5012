@@ -49,4 +49,20 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Ajouter', 'fas fa-list', Category::class)
         ]);
     }
+
+    public function configureCrud(): Crud
+    {
+        return Crud::new()
+            // ...
+
+            // the first argument is the "template name", which is the same as the
+            // Twig path but without the `@EasyAdmin/` prefix
+            ->overrideTemplate('label/null', 'admin/labels/my_null_label.html.twig')
+
+            ->overrideTemplates([
+                'crud/index' => 'admin/pages/index.html.twig',
+                'crud/field/textarea' => 'admin/fields/dynamic_textarea.html.twig',
+            ])
+        ;
+    }
 }
