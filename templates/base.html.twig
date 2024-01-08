@@ -29,6 +29,13 @@
 
 {# , 'LinkArticleShow': path('article_show') Dans le controller faire en sorte d'avoir une vue avec tous les articles #}
         {% block body %}
+            <div class="row">
+                <div class="col">
+                    <div>
+                        {% include 'widget/categories.html.twig' %}
+                    </div>
+                </div>
+            </div>
             <div id="article-list">
                 {% include 'article/list.html.twig' with { articles } %}
             </div>
