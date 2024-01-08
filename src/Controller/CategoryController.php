@@ -9,10 +9,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryController extends AbstractController
 {
     #[Route('/category/{slug}', name: 'category_show')]
-    public function show(): Response
+    public function show(?Category $category): Response
     {
+        if (!$category){
+            return $this->redirectToRoute('app_home');
+        }
         return $this->render('category/index.html.twig', [
-            'controller_name' => 'CategoryController',
+            'category' => $category
         ]);
     }
 }
