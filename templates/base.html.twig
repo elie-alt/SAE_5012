@@ -23,7 +23,8 @@
 		<a href="{{path('app_login')}}">Se connecter</a>
 		<a href="{{path('app_register')}}">S'inscrire</a> #}
 
-        <div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkArticleShow': path('articles_show') }) }}></div>
+        <div {{ react_component('Homepage', { 'LinkBrand': path('admin'), 'LinkHome': path('app_home'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkArticleShow': path('articles_show') }) }}></div>
+        {# <div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkArticleShow': path('articles_show') }) }}></div> #}
 
 
 {# , 'LinkArticleShow': path('article_show') Dans le controller faire en sorte d'avoir une vue avec tous les articles #}
