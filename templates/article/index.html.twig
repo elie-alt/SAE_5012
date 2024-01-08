@@ -26,8 +26,18 @@
 							<section class="mb-5">
 								{{ article.content|raw }}
 							</section>
+							<h2 class="comment-title">
+								<span class="comment-count">{{ article.comments|length }}</span> commentaire(s)
+							</h2>
+							<div class="comment-area">
+								{{ form(commentForm, {'attr':{'class':'comment-form'} }) }}
+							</div>
+							<div class="comment-list">
+								{% for comment in article.comments %}
+									{% include 'comment/index.html.twig' with [comment] %}
+								{% endfor %}
+							</div>
 						</article>
-						
 					</div>
 				</div>
 			</div>

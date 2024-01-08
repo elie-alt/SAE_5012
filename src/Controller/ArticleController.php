@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Comment;
 use App\Form\ArticleType;
+use App\Form\Type\CommentType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -21,8 +23,14 @@ class ArticleController extends AbstractController
         if (!$article){
             return $this->redirectToRoute('app_home');
         }
-        return $this->render('article/index.html.twig', [
+
+        $comment = new Comment($article);
+
+        $commentForm = $this->createForm(CommentType::class, $comment);
+
+        return $this->renderForm('article/index.html.twig', [
             'article' => $article,
+            'commentForm' => $commentForm,
         ]);
     }
 
