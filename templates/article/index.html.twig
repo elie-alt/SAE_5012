@@ -1,13 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{article.title}}{% endblock %}
+{% block title %}
+	{{article.title}}
+{% endblock %}
 
 {% block body %}
-    <div class="container" > 
-        <h1>{{ article.title }}</h1>
+	<div class="container">
 
-        <hr>
 
-        {{ article.content|raw }}
-    </div>
+		<section class="py-5">
+			<div class="container px-5 my-5">
+				<div class="row gx-5">
+					<div
+						class="col-lg-10 offset-lg-1">
+						<article>
+							<header
+								class="mb-4">
+								<h1 class="fw-bolder mb-1">{{ article.title }}</h1>
+
+								<div class="text-muted fst-italic mb-2">January 1, 2023</div>
+								{# <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ article.category }}</a> #}
+								<a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+							</header>
+							<figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..."/></figure>
+							<section class="mb-5">
+								{{ article.content|raw }}
+							</section>
+						</article>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	</div>
 {% endblock %}
