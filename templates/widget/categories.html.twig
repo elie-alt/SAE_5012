@@ -2,6 +2,9 @@
     <h4>Catégories</h4>
     <ol>
         {% for category in categories %}
+            <li>
+                <a class="text-decoration-none" href="{{ path('category_show', {slug: category.slug}) }}">{{ category.naùe }}</a>
+            </li>
         {% endfor %}
     </ol>
 </div>
