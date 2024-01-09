@@ -23,6 +23,9 @@
 
         <div {{ react_component('Homepage') }}></div>
 
+                <div {{ react_component('HomeNews') }}></div>
+
+
         {% block body %}
             <div id="article-list">
                 {% include 'article/list.html.twig' with { articles } %}

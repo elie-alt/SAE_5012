@@ -4,6 +4,7 @@ npm run build
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load
+php intl --> ;
 php -S localhost:8000 -t public/
 mdp_USER: 123456U
 mdp_ADMIN: 123456A
