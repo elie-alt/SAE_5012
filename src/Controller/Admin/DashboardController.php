@@ -14,6 +14,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use App\Entity\User;
 use App\Entity\Article;
 use App\Entity\Category;
+use App\Entity\Comment;
 
 
 class DashboardController extends AbstractDashboardController
@@ -41,13 +42,15 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
 
-        yield MenuItem::linkToUrl('Homepage', 'fas fa-home', $this->generateUrl('app_react'));
+        yield MenuItem::linkToRoute('Le site', 'fas fa-home', 'app_home');
 
         yield MenuItem::subMenu('Articles', 'fas fa-newspaper')->setSubItems([
             MenuItem::linkToCrud('Tous les articles', 'fas fa-newspaper', Article::class),
             MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Article::class)->setAction(Crud::PAGE_NEW),
-            MenuItem::linkToCrud('Ajouter', 'fas fa-list', Category::class)
+            MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class)->setAction(Crud::PAGE_NEW)
         ]);
+
+        yield MenuItem::linkToCrud('Commentaires', 'fas fa-comment', Comment::class);
     }
 
     public function configureCrud(): Crud

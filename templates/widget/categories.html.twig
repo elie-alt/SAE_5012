@@ -1,0 +1,7 @@
+<div>
+    {% for category in categories %}
+    <li>
+        <a href="{{path('category_show', {slug: category.slug}) }}">{{category.name}}</a>
+    </li>
+    {% endfor %}
+</div>

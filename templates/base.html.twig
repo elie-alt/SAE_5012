@@ -31,6 +31,9 @@
             <div id="article-list">
                 {% include 'article/list.html.twig' with { articles } %}
             </div>
+			<div>
+				{% include 'widget/categories.html.twig' %}
+			</div>
         {% endblock %}
     </body>
 </html>

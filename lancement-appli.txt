@@ -8,6 +8,7 @@ php -S localhost:8000 -t public/
 mdp_USER: 123456U
 mdp_ADMIN: 123456A
 
+enlever le ; devant extension=intl dans php.ini
 
 https://www.youtube.com/playlist?list=PLkHw7J3J2iaoIowz7LIImIFHkMJzO_84F
 https://symfony.com/bundles/EasyAdminBundle/current/design.html

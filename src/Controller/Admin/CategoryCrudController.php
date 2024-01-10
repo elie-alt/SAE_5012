@@ -21,7 +21,7 @@ class CategoryCrudController extends AbstractCrudController
     {
         yield TextField::new('name');
         yield SlugField::new('slug')
-            ->setTargetFieldName('title');
+            ->setTargetFieldName('name');
 
         yield ColorField::new('color');
     }
