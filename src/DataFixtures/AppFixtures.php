@@ -20,7 +20,7 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('fr_FR');
         $user = new User();
-        $user->setEmail($faker->email());
+        $user->setUsername($faker->userName());
         $user->setRoles(['ROLE_ADMIN']);
         $password=$this->hasher->hashPassword($user, '123456A');
         $user->setPassword($password);
@@ -31,7 +31,7 @@ class AppFixtures extends Fixture
         for($i=0; $i<3; $i++){
             $faker = Factory::create('fr_FR');
         $user = new User();
-        $user->setEmail($faker->email());
+        $user->setUsername($faker->userName());
         $user->setRoles(['ROLE_USER']);
         $password=$this->hasher->hashPassword($user, '123456U');
         $user->setPassword($password);

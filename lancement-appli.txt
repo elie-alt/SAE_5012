@@ -4,6 +4,7 @@ npm run build
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load
+php intl --> ;
 php -S localhost:8000 -t public/
 mdp_USER: 123456U
 mdp_ADMIN: 123456A
@@ -13,3 +14,11 @@ enlever le ; devant extension=intl dans php.ini
 https://www.youtube.com/playlist?list=PLkHw7J3J2iaoIowz7LIImIFHkMJzO_84F
 https://symfony.com/bundles/EasyAdminBundle/current/design.html
 vue easyadmin twig : vendor/easycorp/src/resources/views
+
+
+
+gris : #313340
+noir : #1D1F26
+bleu : #123273
+sable : #F2DEA0
+blanc cassé : #F2F2F2

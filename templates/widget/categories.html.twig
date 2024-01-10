@@ -1,7 +1,10 @@
 <div>
-    {% for category in categories %}
-    <li>
-        <a href="{{path('category_show', {slug: category.slug}) }}">{{category.name}}</a>
-    </li>
-    {% endfor %}
+    <h4>Catégories</h4>
+    <ol>
+        {% for category in categories %}
+            <li>
+                <a class="text-decoration-none" href="{{ path('category_show', {slug: category.slug}) }}">{{ category.name }}</a>
+            </li>
+        {% endfor %}
+    </ol>
 </div>
