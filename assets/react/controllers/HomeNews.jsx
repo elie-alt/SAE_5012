@@ -1,33 +1,17 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
-const NewsSection = () => {
+
+export default function articles(props) {
     return (
         <section className="py-5 bg-light">
             <Container className="px-5">
                 <Row className="gx-5">
                     <Col xl={8}>
-                        <h2 className="fw-bolder fs-5 mb-4">News</h2>
-                        {/* News item*/}
+                        <h2 className="fw-bolder fs-5 mb-4">Les articles</h2>
                         <div className="mb-4">
-                            <div className="small text-muted">May 12, 2023</div>
+                            <div className="small text-muted">{props.date}</div>
                             <a className="link-dark" href="#!"><h3>Start Bootstrap releases Bootstrap 5 updates for templates and themes</h3></a>
-                        </div>
-                        {/* News item*/}
-                        <div className="mb-5">
-                            <div className="small text-muted">May 5, 2023</div>
-                            <a className="link-dark" href="#!"><h3>Bootstrap 5 has officially landed</h3></a>
-                        </div>
-                        {/* News item*/}
-                        <div className="mb-5">
-                            <div className="small text-muted">Apr 21, 2023</div>
-                            <a className="link-dark" href="#!"><h3>This is another news article headline, but this one is a little bit longer</h3></a>
-                        </div>
-                        <div className="text-end mb-5 mb-xl-0">
-                            <a className="text-decoration-none" href="#!">
-                                More news
-                                <i className="bi bi-arrow-right"></i>
-                            </a>
                         </div>
                     </Col>
                     <Col xl={4}>
@@ -56,5 +40,3 @@ const NewsSection = () => {
         </section>
     );
 };
-
-export default NewsSection;

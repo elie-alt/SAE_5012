@@ -21,7 +21,9 @@
     <body>
         <div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkArticleShow': path('articles_show') }) }}></div>
 
-        <div {{ react_component('Homepage') }}></div>
+        {# <div {{ react_component('Homepage') }}></div> #}
+                <div {{ react_component('Header')}}></div>
+
 
                 <div {{ react_component('HomeNews') }}></div>
 

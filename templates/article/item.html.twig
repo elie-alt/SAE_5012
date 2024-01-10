@@ -13,8 +13,11 @@
             <h2>
                 <a class="text-decoration-none" href="{{ article_show }}">{{ article.title }}</a>
             </h2>
+
             <p>
-                {{ article.createdAt|date('d M Y') }}
+            <articles date="{{ article.createdAt|date('d M Y')}}">
+            {# {{ react_component('articles date={{ article.createdAt|date('d M Y') }}')}} #}
+                {# {{ article.createdAt|date('d M Y') }} #}
             </p>
             {{article.featuredText ?: article.content|striptags|slice(0, 130) ~ '...'}}
         </div>
