@@ -13,10 +13,15 @@ class CategoryController extends AbstractController
     #[Route('/category/{slug}', name: 'category_show')]
     public function show(?Category $category): Response
     {
+        if (!$category) {
+            return $this->redirectToRoute('app_home');
+        }
+
         if (!$category){
             return $this->redirectToRoute('app_home');
         }
         return $this->render('category/index.html.twig', [
+            'category' => $category,
             'category' => $category
         ]);
     }

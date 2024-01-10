@@ -3,6 +3,14 @@
 {% block title %}{{category.name}}{% endblock %}
 
 {% block body %}
+    <main>
+        <div>
+        {{category.name}}
+            <div id="article-list">
+                {% include 'article/list.html.twig' with { articles: category.articles } %}
+            </div>
+        </div>
+    </main>
     <main class="container">
         <div>
             <h3>{{ category.name }}</h3>
