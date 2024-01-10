@@ -44,8 +44,8 @@
                                                     Connectez-vous :
 													
                                                 </h1>
-                                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="Votre Email" class="form-control mb-3" autocomplete="email" required autofocus>
-                                                    <input type="password" name="password" id="inputPassword" class="form-control mb-3" placeholder="Votre Mot de passe" autocomplete="current-password" required>
+                                                <input type="text" value="{{ last_username }}" name="_username" id="inputUsernale" placeholder="Votre Email" class="form-control mb-3" autocomplete="username" required autofocus>
+                                                    <input type="password" name="_password" id="inputPassword" class="form-control mb-3" placeholder="Votre Mot de passe" autocomplete="current-password" required>
                                                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                                                             <button class="btn btn-lg btn-primary" type="submit">
                                                                 Se connecter                                                       
