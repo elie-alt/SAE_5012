@@ -46,8 +46,8 @@ function NavbarMenu(props) {
             <Nav.Link href={props.LinkBrand}>Contact</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
             <Nav.Link href="#faq">FAQ</Nav.Link>
-            <Nav.Link href="#blog">Blog</Nav.Link>
-            <Nav.Link href="#portfolio">Portfolio</Nav.Link>
+            <Nav.Link href={props.LinkSignIn}>Se connecter</Nav.Link>
+            <Nav.Link href={props.LinkSignUp}>S'inscrire</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

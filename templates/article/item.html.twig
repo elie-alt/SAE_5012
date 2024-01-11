@@ -1,25 +1,25 @@
 {% set article_show = path('article_show', { 'slug': article.slug }) %}
 
-<article>
+	<article class="pb-5 bg-light">
     <div class="row">
-        <div class="col-md-5" >
+        <div class="col-md-2">
             {% if article.featuredImage %}
-            <a href="{{ path('article_show', {'slug' : article.slug }) }}">
-                <img src="uploads/{{ article.featuredImage.filename }}" alt="{{ article.featuredImage.altText }}" loading="lazy" width="350" height="205" >
-            </a>
+                <a href="{{ path('article_show', { 'slug': article.slug }) }}">
+                    <img src="/uploads/{{ article.featuredImage.filename }}" alt="{{ article.featuredImage.altText }}" loading="lazy" width="350" height="205" >
+                </a>
             {% endif %}
         </div>
-        <div class="col-md-7">
-            <h2>
-                <a class="text-decoration-none" href="{{ article_show }}">{{ article.title }}</a>
+        <div class="col-md-6">
+            <h2 class="article-title">
+                <a href="{{ path('article_show', { 'slug': article.slug }) }}" class="text-decoration-none">{{ article.title }}</a>
             </h2>
-
             <p>
-            <articles date="{{ article.createdAt|date('d M Y')}}">
-            {# {{ react_component('articles date={{ article.createdAt|date('d M Y') }}')}} #}
-                {# {{ article.createdAt|date('d M Y') }} #}
+                {{ article.createdAt|date('d M Y') }} 
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    / <a class="text-decoration-none" href="{{ path('article_show', { 'slug': article.slug }) }}#comments">Laisser un commentaire</a>
+                {% endif %}
             </p>
-            {{article.featuredText ?: article.content|striptags|slice(0, 130) ~ '...'}}
+            {{ article.featuredText ?: '' }}
         </div>
     </div>
 </article>

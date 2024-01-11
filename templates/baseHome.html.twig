@@ -14,33 +14,25 @@
 		{% endblock %}
 
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        <div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkArticleShow': path('articles_show') }) }}></div>
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkArticleShow': path('articles_show') } ) }}></div>
 
-        {# <div {{ react_component('Homepage') }}></div> #}
-                <div {{ react_component('Header')}}></div>
-
-
-                <div {{ react_component('HomeNews') }}></div>
+		<div {{ react_component('Header', {'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register')} )}}></div>
 
 
-        {% block body %}
-            <div id="article-list">
-                {% include 'article/list.html.twig' with { articles } %}
-            </div>
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <div>   
-                <a href="{{ path('app_profile', {username: app_user.username}) }} >Mon profil</a>
-                <a href="{{ path('app_logout') }}">Se déconnecter</a>
-            </div>
-            {% endif %}
-        {% endblock %}
 
-        <div {{ react_component('Footer')}}></div>
+		{# {{ react_component('HomeNews', { title: article.title, date: article.createdAt|date('d M Y') }) }}  #}
+		{% block body %}
+			<div id="article-list">
+				{% include 'article/list.html.twig' with { articles } %}
+			</div>
+		{% endblock %}
 
-    </body>
+		<div {{ react_component('Footer')}}></div>
+
+	</body>
 </html>
