@@ -3,18 +3,22 @@
 {% block title %}Hello UserController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div>
+        <div>
+            <h2>profil de {{ user.username|capitalize }}</h2>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <div>
+                <label for="username" class="form-label">Nom d'utilisateur</label>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/22102619t/Desktop/SAE_5012/src/Controller/UserController.php'|file_link(0) }}">src/Controller/UserController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/22102619t/Desktop/SAE_5012/templates/user/index.html.twig'|file_link(0) }}">templates/user/index.html.twig</a></code></li>
-    </ul>
-</div>
+            <div class="input-group">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" value="{{ user.username }}" readonly>
+            </div>
+
+            <div>
+                <p>Nombre de commentaires posté : {{ user.comments|length }}</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
