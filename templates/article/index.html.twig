@@ -43,10 +43,12 @@
 			</div>
 		</section>
 	</div> #}
-{# {{ constant('titre', article.title) }}
 
 
-		<div {{ react_component('Article', { 'ArticleTitle': titre } ) }}></div> #}
+		{# <div {{ react_component('Article', { 'ArticleTitle': titre } ) }}></div> #}
+
+<div id="react-article-container" data-dynamic-data="{{ article | json_encode }}"></div>
+
 		<div {{ react_component('Article' ) }}> </div>
 
 
