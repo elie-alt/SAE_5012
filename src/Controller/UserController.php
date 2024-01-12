@@ -14,7 +14,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class UserController extends AbstractController
 {
-    #[Route('/user/{username}', name: 'app_register')]
+    #[Route(path: '/user/{username}', name: 'app_register')]
     public function index(User $user)
     {
         return $this->render('user/index.html.twig', [
@@ -22,7 +22,7 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/user/register', name: 'app_register')]
+    #[Route(path: '/user/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
