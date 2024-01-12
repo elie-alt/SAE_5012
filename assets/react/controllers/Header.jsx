@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 
 export default function Header(props){
   return (
-    <header className="bg-blue py-5">
+    <header className=" py-5">
       <Container className="px-5">
         <Row className="gx-5 align-items-center justify-content-center">
           <Col lg={8} xl={7} xxl={6}>
