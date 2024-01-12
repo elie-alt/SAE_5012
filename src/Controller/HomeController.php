@@ -19,4 +19,13 @@ class HomeController extends AbstractController
             'categories' => $categoryrepo->findAll(),
         ]);
     }
+
+    #[Route('/articles_home', name: 'app_home_articles')]
+    public function index_home(ArticleRepository $articlerepo, CategoryRepository $categoryrepo): Response
+    {
+        return $this->render('baseArticles.html.twig', [
+            'articles' => $articlerepo->findAll(),
+            'categories' => $categoryrepo->findAll(),
+        ]);
+    }
 }

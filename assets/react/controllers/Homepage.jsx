@@ -3,7 +3,6 @@ import React from 'react';
 import { Container, Card, Badge } from 'react-bootstrap';
 
 // Assurez-vous que le chemin d'importation de l'image est correct
-const backgroundImage = 'https://www.programas-gratis.net/blog/wp-content/uploads/2015/04/teclado.jpg';
 
 function App(props) {
   return (
@@ -12,7 +11,7 @@ function App(props) {
         <section className="py-5">
           <Container>
             <h1 className="fw-bolder fs-5 mb-4">Construire son propre site web</h1>
-            <Card className="border-0 shadow rounded-3 overflow-hidden position-relative" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover' }}>
+            <Card className="border-0 shadow rounded-3 overflow-hidden position-relative">
               <div className="row gx-0">
                 <div className="col-lg-6 col-xl-5 py-lg-5">
                   <Card.Body className="p-4 p-md-5">

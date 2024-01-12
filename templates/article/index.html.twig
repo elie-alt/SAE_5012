@@ -5,9 +5,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
-
-
+	{# <div class="container">
 		<section class="py-5">
 			<div class="container px-5 my-5">
 				<div class="row gx-5">
@@ -18,9 +16,9 @@
 								class="mb-4">
 								<h1 class="fw-bolder mb-1">{{ article.title }}</h1>
 
-								<div class="text-muted fst-italic mb-2">January 1, 2023</div>
-								{# <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ article.category }}</a> #}
-								<a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+								<div class="text-muted fst-italic mb-2">{{ article.createdAt|date('d M Y') }}</div>
+								<a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ article.category }}</a>
+								<a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ article.categories|string }}</a>
 							</header>
 							<figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..."/></figure>
 							<section class="mb-5">
@@ -44,7 +42,12 @@
 				</div>
 			</div>
 		</section>
+	</div> #}
+{# {{ constant('titre', article.title) }}
 
 
-	</div>
+		<div {{ react_component('Article', { 'ArticleTitle': titre } ) }}></div> #}
+		<div {{ react_component('Article' ) }}> </div>
+
+
 {% endblock %}

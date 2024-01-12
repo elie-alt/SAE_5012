@@ -22,3 +22,5 @@ noir : #1D1F26
 bleu : #123273
 sable : #F2DEA0
 blanc cassé : #F2F2F2
+
+TODO : Forcer la connexion pour voir les articles. Car la quand on arrive on ne peut pas voir les articles. (mettre un bloc " connectez vous pour voir vos artciles" ) 
