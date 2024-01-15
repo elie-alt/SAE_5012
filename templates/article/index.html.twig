@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-	{# <div class="container">
+	<div class="container">
 		<section class="py-5">
 			<div class="container px-5 my-5">
 				<div class="row gx-5">
@@ -17,21 +17,27 @@
 								<h1 class="fw-bolder mb-1">{{ article.title }}</h1>
 
 								<div class="text-muted fst-italic mb-2">{{ article.createdAt|date('d M Y') }}</div>
-								<a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ article.category }}</a>
-								<a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ article.categories|string }}</a>
+								{#<a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ article.category }}</a>
+								<a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ article.categories|string }}</a> #}
 							</header>
 							<figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..."/></figure>
 							<section class="mb-5">
 								{{ article.content|raw }}
 							</section>
+
+
 							<h2 class="comment-title">
 								<span class="comment-count">{{ article.comments|length }}</span> commentaire(s)
 							</h2>
+
+
 							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 								<div class="comment-area">
 									{{ form(commentForm, {'attr':{'class':'comment-form'} }) }}
 								</div>
 							{% endif %}
+
+
 							<div class="comment-list">
 								{% for comment in article.comments %}
 									{% include 'comment/index.html.twig' with [comment] %}
@@ -42,7 +48,7 @@
 				</div>
 			</div>
 		</section>
-	</div> #}
+	</div>
 
 
 		{# <div {{ react_component('Article', { 'ArticleTitle': titre } ) }}></div> #}
