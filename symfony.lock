@@ -269,6 +269,9 @@
             "./templates/base.html.twig"
         ]
     },
+    "symfony/ux-chartjs": {
+        "version": "v2.13.2"
+    },
     "symfony/ux-react": {
         "version": "2.13",
         "recipe": {
