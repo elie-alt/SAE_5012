@@ -1,5 +1,5 @@
 {% for article in articles %}
-    {% include 'article/item.html.twig' with {article} %}
+    {% include 'article/item.html.twig' with {article, leftCol: 5, rightCol: 5} %}
 {% endfor %}
 
 <div class="container">

@@ -20,7 +20,7 @@ class CommentService
 
     }
 
-    public function getPaginatorComments(?Article $article = null)
+    public function getPaginatorComments(?Article $article = null): PaginationInterface
     {
         $request = $this->requestStack->getMainRequest();
         $page = $request->query->getInt('page', 1);
