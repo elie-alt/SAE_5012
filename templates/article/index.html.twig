@@ -11,20 +11,18 @@
 
 	<div id="root"></div>
 
-	<div>
-		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-			<div class="comment-area">
-				{{ form(commentForm, {attr:{class:'comment-form'} }) }}
-			</div>
-		{% endif %}
-
-
-			<div class="comment-list">
-				{% for comment in comments %}
-					{% include 'comment/index.html.twig' with [comment] %}
-				{% endfor %}
-			</div>
+	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		<div class="comment-area">
+			{{ form(commentForm, {attr:{class:'comment-form'} }) }}
 		</div>
+	{% endif %}
+
+
+	<div class="comment-list">
+		{% for comment in comments %}
+			{% include 'comment/index.html.twig' with [comment] %}
+		{% endfor %}
 	</div>
+</div>
 
 {% endblock %}

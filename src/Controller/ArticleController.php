@@ -38,13 +38,20 @@ class ArticleController extends AbstractController
     }
 
     #[Route('/articles', name: 'articles_show')]
-    public function show_articles(?Article $article): Response
+    public function show_articles(?Article $article, CommentService $commentService): Response
     {
         if (!$article){
             return $this->redirectToRoute('app_home');
         }
+
+        $comment = new Comment($article);
+
+        $commentForm = $this->createForm(CommentType::class, $comment);
+
         return $this->render('article/index.html.twig', [
             'article' => $article,
+            'comments' => $commentService->getPaginatorComments($article),
+            'commentForm' => $commentForm,
         ]);
     }
 }
