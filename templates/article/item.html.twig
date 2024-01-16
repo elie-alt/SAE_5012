@@ -2,21 +2,21 @@
 
 	<article class="pb-5 bg-light">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-4 offset-md-1 text-blue">
             {% if article.featuredImage %}
                 <a href="{{ path('article_show', { 'slug': article.slug }) }}">
                     <img src="/media/{{ article.featuredImage.filename }}" alt="{{ article.featuredImage.altText }}" loading="lazy" width="350" height="205" >
                 </a>
             {% endif %}
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-blue">
             <h2 class="article-title">
-                <a href="{{ path('article_show', { 'slug': article.slug }) }}" class="text-decoration-none">{{ article.title }}</a>
+                <a href="{{ path('article_show', { 'slug': article.slug }) }}" class="text-decoration-none text-blue">{{ article.title }}</a>
             </h2>
             <p>
                 {{ article.createdAt|date('d M Y') }} 
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                     <a class="text-decoration-none" href="{{ path('article_show', { 'slug': article.slug }) }}#comments">Laisser un commentaire</a>
+                     <a class="text-decoration-none text-sand" href="{{ path('article_show', { 'slug': article.slug }) }}#comments">Laisser un commentaire</a>
                 {% endif %}
             </p>
             {{ article.featuredText ?: '' }}
