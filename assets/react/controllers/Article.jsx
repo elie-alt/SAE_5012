@@ -1,34 +1,25 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+import React from 'react';
+import { Container, Row, Col, Image, Card, CardBody, CardTitle, CardText, Form, FormGroup, Input, Label, Button, Badge } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import { Container, Row } from 'react-bootstrap';
+const Article = (props) => {
+    const { article } = props;
 
-// const reactContainer = document.getElementById('react-article-container');
-// const dynamicData = JSON.parse(reactContainer.dataset.dynamicData);
+    return (
+        <article>
+            <h1 className="fw-bolder mb-1  text-blue">{props.articleTitle}</h1>
 
+            <div className="mb-2 text-blue">{props.articleDate}</div>
 
-// ReactDOM.render(<Article article={dynamicData} />, reactContainer);
+            <img className="img-fluid rounded-3 my-5"src={props.articleImage}></img>
 
-// export default function Article(props) {
-//     const { ArticleTitle, ArticleContent, ArticleComment } = props.article; // Correction ici
+            <p>{props.articleContent}</p>
 
-//     return (
-//         <Container className="px-5 my-5">
-//             <Row className="gx-5">
-//                 <div className="col-lg-10 offset-lg-1">
-//                     <header className="mb-4">
-//                         <h1 className="fw-bolder mb-1">{ArticleTitle}</h1>
-//                         <div className="text-muted fst-italic mb-2"></div>
-//                     </header>
-//                     <figure className="mb-4"><img className="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
-//                     <section className="mb-5">
-//                         {ArticleContent}
-//                     </section>
-//                     <h2 className="comment-title">
-//                         <span className="comment-count">{ArticleComment}</span> commentaire(s)
-//                     </h2>
-//                 </div>
-//             </Row>
-//         </Container>
-//     );
-// };
+            <h2 className="comment-title text-blue">
+                <span className="comment-count text-blue">{props.articleComments}</span> commentaire(s)
+            </h2>
+        </article>
+    );
+};
+
+export default Article;

@@ -6,7 +6,6 @@ body {
   font-size: 15px;
   line-height: 1.7;
   color: #c4c3ca;
-  background-color: #1f2029;
   overflow-x: hidden;
 }
 
@@ -179,7 +178,6 @@ h6 span {
   line-height: 22px;
   letter-spacing: 0.5px;
   outline: none;
-  color: #c4c3ca;
   background-color: #1f2029;
   border: none;
   -webkit-transition: all 200ms linear;

@@ -8,10 +8,10 @@ export default function Header(props){
         <Row className="gx-5 align-items-center justify-content-center">
           <Col lg={8} xl={7} xxl={6}>
             <div className="my-5 text-center text-xl-start">
-              <h1 className="display-5 text-sand fw-bolder mb-2">
+              <h1 className="display-5 text-blue fw-bolder mb-2">
                 Créez des CMS sur mesure en un clin d'œil avec notre plateforme intuitive.
               </h1>
-              <p className="lead text-sand fw-normal  mb-4">
+              <p className="lead text-blue fw-normal  mb-4">
                 Simplicité, flexibilité, puissance : donnez vie à votre vision du contenu web
               </p>
               <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">

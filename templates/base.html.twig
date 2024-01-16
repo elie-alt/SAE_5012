@@ -19,6 +19,7 @@
         {% endblock %}
     </head>
     <body>
+    
         <div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkHome': path('app_home'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkArticleShow': path('articles_show') }) }}></div>
 
         {% block body %}
