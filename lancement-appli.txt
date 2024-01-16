@@ -16,7 +16,7 @@ https://www.youtube.com/playlist?list=PLkHw7J3J2iaoIowz7LIImIFHkMJzO_84F
 https://symfony.com/bundles/EasyAdminBundle/current/design.html
 vue easyadmin twig : vendor/easycorp/src/resources/views
 
-
+pour clear le cache : php bin/console c:c
 
 gris : #313340
 noir : #1D1F26
