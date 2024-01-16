@@ -5,23 +5,26 @@
 {% endblock %}
 
 {% block body %}
+	<div {{ react_component('Article', { 'articleTitle': article.title, 'articleContent' : article.content, 'articleDate' : article.createdAt|date('d M Y'), 'articleComments' : article.comments|length } ) }}></div>
+	{# <div {{ react_component('Article', { 'article': article} ) }}></div> ça ne marche pas pour l'instant#}
 
-	<div {{ react_component('Article', { 'articleTitle': article.title, 'articleContent' : article.content, 'articleDate' : article.createdAt|date('d M Y'), 'articleComments' : article.comments|length  } ) }}></div>
 
-    <div id="root"></div>
+	<div id="root"></div>
 
-	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-		<div class="comment-area">
-			{{ form(commentForm, {'attr':{'class':'comment-form'} }) }}
+	<div>
+		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+			<div class="comment-area">
+				{{ form(commentForm, {attr:{class:'comment-form'} }) }}
 			</div>
 		{% endif %}
 
 
-		<div class="comment-list">
-			{% for comment in comments %}
-				{% include 'comment/index.html.twig' with [comment] %}
-			{% endfor %}
+			<div class="comment-list">
+				{% for comment in comments %}
+					{% include 'comment/index.html.twig' with [comment] %}
+				{% endfor %}
+			</div>
 		</div>
+	</div>
 
-
-	{% endblock %}
+{% endblock %}
