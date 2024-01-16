@@ -16,7 +16,7 @@
             <p>
                 {{ article.createdAt|date('d M Y') }} 
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    / <a class="text-decoration-none" href="{{ path('article_show', { 'slug': article.slug }) }}#comments">Laisser un commentaire</a>
+                     <a class="text-decoration-none" href="{{ path('article_show', { 'slug': article.slug }) }}#comments">Laisser un commentaire</a>
                 {% endif %}
             </p>
             {{ article.featuredText ?: '' }}
