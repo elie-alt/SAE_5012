@@ -5,10 +5,11 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
-	<div {{ react_component('Article', { 'articleTitle': article.title, 'articleContent' : article.content, 'articleDate' : article.createdAt|date('d M Y'), 'articleComments' : article.comments|length  } ) }}></div>
+	<div {{ react_component('Article', { 'articleTitle': article.title, 'articleContent' : article.content, 'articleDate' : article.createdAt|date('d M Y'), 'articleComments' : article.comments|length } ) }}></div>
+	{# <div {{ react_component('Article', { 'article': article} ) }}></div> ça ne marche pas pour l'instant#}
 
-    <div id="root"></div>
+
+	<div id="root"></div>
 
 	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 		<div class="comment-area">
