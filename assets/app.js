@@ -137,7 +137,7 @@ class App {
                 const commentCount = document.querySelector('.comment-count');
                 const commentContent = document.querySelector('#document_content');
                 commentList.insertAdjacentHTML('afterbegin', json.message);
-                commentContent.innerText = json.numberOfComments;
+                commentCount.innerText = json.numberOfComments;
                 commentContent.value = '';
             }
         });
