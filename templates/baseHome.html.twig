@@ -20,18 +20,19 @@
 	</head>
 	<body>
 
-		<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
+		<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
 
 		<div {{ react_component('Header', {'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register')} )}}></div>
 
 
-
-		{# {{ react_component('HomeNews', { title: article.title, date: article.createdAt|date('d M Y') }) }}  #}
-		{% block body %}
-			<div id="article-list">
-				{% include 'article/list.html.twig' with { articles } %}
-			</div>
-		{% endblock %}
+		<main class="mb-5">
+			{# {{ react_component('HomeNews', { title: article.title, date: article.createdAt|date('d M Y') }) }}  #}
+			{% block body %}
+				<div id="article-list">
+					{% include 'article/list.html.twig' with { articles } %}
+				</div>
+			{% endblock %}
+		</main>
 
 		<div {{ react_component('Footer')}}></div>
 
