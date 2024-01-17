@@ -20,7 +20,7 @@
     </head>
     <body>
     
-        <div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkHome': path('app_home'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkArticleShow': path('articles_show') }) }}></div>
+		<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
 
         {% block body %}
             <div class="row">
@@ -29,7 +29,7 @@
                         {% include 'widget/categories.html.twig' %}
                     </div>
                 </div>
-            </div>
+            </div> 
             <div id="article-list">
                 {% include 'article/list.html.twig' with { articles } %}
             </div>

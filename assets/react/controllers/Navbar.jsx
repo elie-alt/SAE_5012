@@ -19,11 +19,9 @@ function NavbarMenu(props) {
           <Nav className="ms-auto mb-2 mb-lg-0">
             <Nav.Link href={props.LinkHome}>Accueil</Nav.Link>
             <Nav.Link href={props.LinkArticleShow}>Les articles</Nav.Link>
-            <Nav.Link href={props.LinkBrand}>Contact</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <Nav.Link href="#faq">FAQ</Nav.Link>
             <Nav.Link href={props.LinkSignIn}>Se connecter</Nav.Link>
             <Nav.Link href={props.LinkSignUp}>S'inscrire</Nav.Link>
+            <Nav.Link href={props.LinkSignOut}>Se deconnecter</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
