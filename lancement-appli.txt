@@ -2,6 +2,7 @@ composer install
 npm install --force
 npm run build
 composer require "knplabs/knp-paginator-bundle"
+composer require symfony/twig-pack
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load
@@ -9,8 +10,6 @@ php intl --> enlever ;
 php -S localhost:8000 -t public/
 mdp_USER: 123456U
 mdp_ADMIN: 123456A
-
-Si ça marche pas, il manque plein de "USE", c'est normal :|
 
 https://www.youtube.com/playlist?list=PLkHw7J3J2iaoIowz7LIImIFHkMJzO_84F
 https://symfony.com/bundles/EasyAdminBundle/current/design.html
