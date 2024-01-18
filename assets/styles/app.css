@@ -258,3 +258,12 @@ h6 span {
 .text-lavender {
   color: #C7DDFC;
 }
+
+textarea {
+  width: 100%;
+}
+
+.comment-button-class {
+  text-align: right;
+}
+

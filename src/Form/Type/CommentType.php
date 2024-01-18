@@ -17,19 +17,23 @@ class CommentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('content', TextareaType::class, [
-                'label' => 'Votre message'
-            ])
-            ->add('article', HiddenType::class)
-            ->add('send', SubmitType::class,[
-                'label' => 'Envoyer'
-            ]);
-
-        $builder->get('article')
-            ->addModelTransformer(new CallbackTransformer(
-                fn (Article $article) => $article->getId(),
-                fn (Article $article) => $article->getTitle()
-            ));
+        ->add('content', TextareaType::class, [
+            'label' => 'Votre message',
+            'attr' => [
+                'class' => 'comment-textarea-class',
+            ],
+        ])
+        ->add('article', HiddenType::class, [
+            'attr' => [
+                'class' => 'comment-input-class',
+            ],
+        ])
+        ->add('send', SubmitType::class, [
+            'label' => 'Envoyer',
+            'attr' => [
+                'class' => 'btn offset-10 mb-4 mt-3',
+            ],
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

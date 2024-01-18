@@ -1,11 +1,11 @@
 {% set article_show = path('article_show', { 'slug': article.slug }) %}
 
-	<article class="pb-5 bg-light">
+	<article class=" bg-light py-3 pb-4">
     <div class="row">
         <div class="col-md-4 offset-md-1 text-blue">
             {% if article.featuredImage %}
                 <a href="{{ path('article_show', { 'slug': article.slug }) }}">
-                    <img src="/media/{{ article.featuredImage.filename }}" alt="{{ article.featuredImage.altText }}" loading="lazy" width="350" height="205" >
+                    <img src="/media/{{ article.featuredImage.filename }}" alt="{{ article.featuredImage.altText }}" loading="lazy" width="350" height="205" class="object-fit-cover border rounded" >
                 </a>
             {% endif %}
         </div>
@@ -16,7 +16,7 @@
             <p>
                 {{ article.createdAt|date('d M Y') }} 
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                     <a class="text-decoration-none text-sand" href="{{ path('article_show', { 'slug': article.slug }) }}#comments">Laisser un commentaire</a>
+                     <a class="text-decoration-none" href="{{ path('article_show', { 'slug': article.slug }) }}#comments">Laisser un commentaire</a>
                 {% endif %}
             </p>
             {{ article.featuredText ?: '' }}

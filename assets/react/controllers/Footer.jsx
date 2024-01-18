@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 export default  function App(props) {
   return (
-    <footer className="bg-dark py-4 mt-auto fixed-bottom">
+    <footer className="bg-dark py-4 mt-auto sticky-bottom">
         <Container>
           <div className="row align-items-center justify-content-between flex-column flex-sm-row">
             <div className="col-auto"><div className="small m-0 text-white">Copyright &copy; Your Website 2023</div></div>

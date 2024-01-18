@@ -20,7 +20,7 @@
     </head>
     <body>
 	
-		<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
+		<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
 
         {% block body %}
             <div id="article-list">
