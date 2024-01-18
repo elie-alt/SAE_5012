@@ -31,16 +31,6 @@
 				<div id="article-list">
 					{% include 'article/list.html.twig' with { articles } %}
 				</div>
-				<div>
-        {{ form_start(form) }}
-        {{ form_row(form.csvFile) }}
-		<button type="submit">Télécharger et Afficher le Graphique</button>
-        {{ form_end(form) }}
-        <br>
-        {% if chart is defined %}
-            {{ render_chart(chart) }}
-        {% endif %}
-    </div>
 		{% endblock %}
 		</main>
 

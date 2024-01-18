@@ -50,11 +50,19 @@ class UserCrudController extends AbstractCrudController
             ->allowMultipleChoices()
             ->renderAsBadges([
                 'ROLE_ADMIN' => 'success',
-                'ROLE_AUTHOR' => 'warning'
+                'ROLE_FOURNISSEUR' => 'info',
+                'ROLE_DESIGNER' => 'warning',
+                'ROLE_EDITOR' => 'primary',
+                'ROLE_AUTHOR' => 'warning',
+                'ROLE_Abonne' => 'secondary',
             ])
             ->setChoices([
                 'Administrateur' => 'ROLE_ADMIN',
+                'Fournisseur' => 'ROLE_FOURNISSEUR',
+                'Designer' => 'ROLE_DESIGNER',
+                'Editeur' => 'ROLE_EDITOR',
                 'Auteur' => 'ROLE_AUTHOR',
+                'Abonne' => 'ROLE_SUBSCRIBER',
             ]);
     }
 
