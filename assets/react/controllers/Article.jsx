@@ -28,4 +28,8 @@ const Article = (props) => {
     );
 };
 
+Article.defaultProps = {
+    articleImage: "https://img.freepik.com/vecteurs-premium/vecteur-icone-image-par-defaut-page-image-manquante-pour-conception-site-web-application-mobile-aucune-photo-disponible_87543-11093.jpg",
+};
+
 export default Article;
