@@ -9,6 +9,11 @@ php bin/console doctrine:fixtures:load
 php intl --> enlever ;
 php -S localhost:8000 -t public/
 mdp_USER: 123456U
+mdp_SUBSCRIBER: 123456S
+mdp_AUTHOR: 123456AU
+mdp_EDITOR: 123456U
+mdp_DESIGNEUR: 123456U
+mdp_FOURNISSEUR: 123456F
 mdp_ADMIN: 123456A
 
 https://www.youtube.com/playlist?list=PLkHw7J3J2iaoIowz7LIImIFHkMJzO_84F
@@ -25,3 +30,5 @@ blanc cassé : #F2F2F2
 
 Todo: Sur le content on voit toutes les balises mais elle ne s'appliquent pas aux textes
 J'arrive pas à afficher les catégories
+
+ajouter une image par défault pcq le filename empeche d'afficher l'article

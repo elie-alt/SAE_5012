@@ -44,19 +44,19 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToRoute('Aller sur le site', 'fa fa-undo', 'app_home');
 
-        // yield MenuItem::linkToUrl('Homepage', 'fas fa-home', $this->generateUrl('app_home'));
+        if ($this->isGranted('ROLE_EDITOR')) {
+            if ($this->isGranted('ROLE_AUTHOR')) {
+                yield MenuItem::subMenu('Articles', 'fas fa-newspaper')->setSubItems([
+                    MenuItem::linkToCrud('Tous les articles', 'fas fa-newspaper', Article::class),
+                    MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Article::class)->setAction(Crud::PAGE_NEW),
+                    MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class)->setAction(Crud::PAGE_NEW)
+                ]);
 
-        if ($this->isGranted('ROLE_AUTHOR')) {
-            yield MenuItem::subMenu('Articles', 'fas fa-newspaper')->setSubItems([
-                MenuItem::linkToCrud('Tous les articles', 'fas fa-newspaper', Article::class),
-                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Article::class)->setAction(Crud::PAGE_NEW),
-                MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class)->setAction(Crud::PAGE_NEW)
-            ]);
-
-            yield MenuItem::subMenu('Médias', 'fas fa-photo-video')->setSubItems([
-                MenuItem::linkToCrud('Médiathèque', 'fas fa-photo-video', Media::class),
-                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Media::class)->setAction(Crud::PAGE_NEW),
-            ]);
+                yield MenuItem::subMenu('Médias', 'fas fa-photo-video')->setSubItems([
+                    MenuItem::linkToCrud('Médiathèque', 'fas fa-photo-video', Media::class),
+                    MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Media::class)->setAction(Crud::PAGE_NEW),
+                ]);
+            }
         }
 
         if ($this->isGranted('ROLE_ADMIN')) {
