@@ -13,7 +13,6 @@
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 
-
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
@@ -25,7 +24,7 @@
 		{% else %}
 			<div {{ react_component('NavbarConnect', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
 		{% endif %}
-		
+
 		{% block body %}
 			<div id="article-list">
 				{% include 'article/list.html.twig' with { articles } %}
