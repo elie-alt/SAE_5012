@@ -14,25 +14,25 @@
 		{% endblock %}
 
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-	
-{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+
+		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkHome': path('app_home'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
-			{% endif %}
+		{% else %}
+			<div {{ react_component('NavbarConnect', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
+		{% endif %}
+		
+		{% block body %}
+			<div id="article-list">
+				{% include 'article/list.html.twig' with { articles } %}
+			</div>
+		{% endblock %}
 
-			<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
+		<div {{ react_component('Footer')}}></div>
 
-        {% block body %}
-            <div id="article-list">
-                {% include 'article/list.html.twig' with { articles } %}
-            </div>
-        {% endblock %}
-
-        <div {{ react_component('Footer')}}></div>
-
-    </body>
+	</body>
 </html>
