@@ -1,0 +1,6 @@
+easy_admin:
+  entities:
+    Datas:
+      class: App\Entity\Datas
+      label: 'CSV Files'
+      # Configurations supplémentaires selon vos besoins

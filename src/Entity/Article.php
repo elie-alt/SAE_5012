@@ -44,6 +44,9 @@ class Article implements TimeStampedInterface
     #[ORM\ManyToOne]
     private ?Media $featuredImage = null;
 
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    private ?Datas $FeaturedData = null;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
@@ -192,6 +195,18 @@ class Article implements TimeStampedInterface
     public function setFeaturedImage(?Media $featuredImage): static
     {
         $this->featuredImage = $featuredImage;
+
+        return $this;
+    }
+
+    public function getFeaturedData(): ?Datas
+    {
+        return $this->FeaturedData;
+    }
+
+    public function setFeaturedData(?Datas $FeaturedData): static
+    {
+        $this->FeaturedData = $FeaturedData;
 
         return $this;
     }

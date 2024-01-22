@@ -3,6 +3,7 @@ npm install --force
 npm run build
 composer require "knplabs/knp-paginator-bundle"
 composer require symfony/twig-pack
+composer require vich/uploader-bundle
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load
