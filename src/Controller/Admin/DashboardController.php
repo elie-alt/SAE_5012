@@ -18,6 +18,7 @@ use App\Entity\Category;
 use App\Entity\Comment;
 use App\Entity\Media;
 use App\Entity\Menu;
+use App\Entity\Datas;
 
 
 class DashboardController extends AbstractDashboardController
@@ -65,6 +66,12 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::subMenu('Comptes', 'fas fa-user')->setSubItems([
                 MenuItem::linkToCrud('Tous les comptes', 'fas fa-user-friends', User::class),
                 MenuItem::linkToCrud('Ajouter', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
+            ]);
+        }
+        if ($this->isGranted('ROLE_FOURNISSEUR')){
+            yield MenuItem::subMenu('Datas', 'fas fa-photo-video')->setSubItems([
+                MenuItem::linkToCrud('Médiathèque', 'fas fa-photo-video', Datas::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Datas::class)->setAction(Crud::PAGE_NEW),
             ]);
         }
 
