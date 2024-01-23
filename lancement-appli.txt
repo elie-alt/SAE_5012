@@ -18,6 +18,8 @@ mdp_DESIGNEUR: 123456U
 mdp_FOURNISSEUR: 123456F
 mdp_ADMIN: 123456A
 
+pour avoir les erreurs personnalisées : composer dump-env prod
+
 https://www.youtube.com/playlist?list=PLkHw7J3J2iaoIowz7LIImIFHkMJzO_84F
 https://symfony.com/bundles/EasyAdminBundle/current/design.html
 vue easyadmin twig : vendor/easycorp/src/resources/views
