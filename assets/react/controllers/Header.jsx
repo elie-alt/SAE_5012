@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { ThemeContext } from '../../theme-context';
 
 export default function Header(props){
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <header className=" py-5">
-      <Container className="px-5">
+    <header className=" py-5" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
+    <Container className="px-5">
         <Row className="gx-5 align-items-center justify-content-center">
           <Col lg={8} xl={7} xxl={6}>
             <div className="my-5 text-center text-xl-start">

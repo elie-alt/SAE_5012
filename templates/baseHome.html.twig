@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>
-			{% block title %}Welcome!
-			{% endblock %}
-		</title>
-		<link
-		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-		{% block stylesheets %}
-			{{ encore_entry_link_tags('app') }}
-		{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}Welcome!{% endblock %}
+    </title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
 
-		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
-		{% endblock %}
-	</head>
-	<body>
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkHome': path('app_home'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
+{% else %}
+    <div {{ react_component('NavbarConnect', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
+{% endif %}
 
-		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-			<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkHome': path('app_home'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
-		{% else %}
-			<div {{ react_component('NavbarConnect', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
-		{% endif %}
+<div {{ react_component('Header', {'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register')} )}}></div>
 
+<main class="mb-5">
+    {% block body %}
+        <div id="article-list">
+            {% include 'article/list.html.twig' with { articles } %}
+        </div>
+    {% endblock %}
+</main>
 
-		<div {{ react_component('Header', {'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register')} )}}></div>
-
-
-		<main class="mb-5">
-			{% block body %}
-				<div id="article-list">
-					{% include 'article/list.html.twig' with { articles } %}
-				</div>
-			{% endblock %}
-		</main>
+		<div {{ react_component('Button')}}></div>
 
 		<div {{ react_component('Footer')}}></div>
-	</body>
-</html></body></html>
+
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+</body>
+</html>
