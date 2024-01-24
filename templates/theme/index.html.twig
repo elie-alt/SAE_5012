@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{theme.name}}{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <div>
+            <h3>{{ theme.name }}</h3>
+            <h3>{{ theme.color }}</h3>
+            {# <div  id="article-list">
+                {% include 'article/list.html.twig' with { articles: articles } %}
+            </div> #}
+        </div>
+    </main>
+{% endblock %}

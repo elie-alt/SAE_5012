@@ -19,7 +19,7 @@ use App\Entity\Comment;
 use App\Entity\Media;
 use App\Entity\Menu;
 use App\Entity\Datas;
-
+use App\Entity\Theme;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -72,6 +72,12 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::subMenu('Datas', 'fas fa-photo-video')->setSubItems([
                 MenuItem::linkToCrud('Médiathèque', 'fas fa-photo-video', Datas::class),
                 MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Datas::class)->setAction(Crud::PAGE_NEW),
+            ]);
+        }
+        if ($this->isGranted('ROLE_DESIGNEUR')){
+            yield MenuItem::subMenu('Themes', 'fas fa-photo-video')->setSubItems([
+                MenuItem::linkToCrud('Bibliothèque', 'fas fa-photo-video', Theme::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Theme::class)->setAction(Crud::PAGE_NEW),
             ]);
         }
 

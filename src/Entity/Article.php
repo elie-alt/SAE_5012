@@ -49,10 +49,14 @@ class Article implements TimeStampedInterface
     #[ORM\ManyToOne(inversedBy: 'articles')]
     private ?Datas $FeaturedData = null;
 
+    #[ORM\ManyToMany(targetEntity: Theme::class, mappedBy: 'articles')]
+    private Collection $themes;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->themes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -216,5 +220,32 @@ class Article implements TimeStampedInterface
     public function __toString()
     {
         return $this->title;
+    }
+
+    /**
+     * @return Collection<int, Theme>
+     */
+    public function getThemes(): Collection
+    {
+        return $this->themes;
+    }
+
+    public function addTheme(Theme $theme): static
+    {
+        if (!$this->themes->contains($theme)) {
+            $this->themes->add($theme);
+            $theme->addArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTheme(Theme $theme): static
+    {
+        if ($this->themes->removeElement($theme)) {
+            $theme->removeArticle($this);
+        }
+
+        return $this;
     }
 }
