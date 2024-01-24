@@ -25,11 +25,7 @@ export default function Header(props){
             </div>
           </Col>
           <Col xl={5} xxl={6} className="d-none d-xl-block text-center">
-            <img
-              className="img-fluid rounded-3 my-5"
-              src="https://dummyimage.com/600x400/343a40/6c757d"
-              alt="..."
-            />
+            
           </Col>
         </Row>
       </Container>

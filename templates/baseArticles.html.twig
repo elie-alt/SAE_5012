@@ -24,12 +24,14 @@
 		{% else %}
 			<div {{ react_component('NavbarConnect', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
 		{% endif %}
-
+		
+	<main class="mb-5 mainArticles">
 		{% block body %}
 			<div id="article-list">
 				{% include 'article/list.html.twig' with { articles } %}
 			</div>
 		{% endblock %}
+	</main>
 
 		<div {{ react_component('Footer')}}></div>
 

@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/app.css';
+import { ThemeContext } from '../../theme-context';
 
-import '../../styles/custom-bootstrap.css';
 
 
 function NavbarMenu(props) {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <Navbar bg="dark" expand="lg" variant="dark">
+    <Navbar expand="lg" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
       <Container>
         <Navbar.Brand href={props.LinkHome}>CMS</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarSupportedContent" />
@@ -20,6 +22,7 @@ function NavbarMenu(props) {
             <Nav.Link href={props.LinkArticleShow}>Les articles</Nav.Link>
             <Nav.Link href={props.LinkSignIn}>Se connecter</Nav.Link>
             <Nav.Link href={props.LinkSignUp}>S'inscrire</Nav.Link>
+
           </Nav>
         </Navbar.Collapse>
       </Container>

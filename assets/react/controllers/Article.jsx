@@ -8,8 +8,6 @@ const Article = (props) => {
         <div
             class="col-lg-10 offset-lg-1">
             <article>
-                <header
-                    class="mb-4"></header>
                 <h1 className="fw-bolder mb-1  text-blue">{articleTitle}</h1>
 
                 <div class="fst-italic mb-2 text-blue">{articleDate} / {articleCategorie}</div>

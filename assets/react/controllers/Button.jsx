@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../theme-context';
 
-function Button() {
+function ButtonTheme() {
     const { theme, toggle, dark } = useContext(ThemeContext);
 
     return (
@@ -22,4 +22,4 @@ function Button() {
     );
 }
 
-export default Button;
+export default ButtonTheme;
