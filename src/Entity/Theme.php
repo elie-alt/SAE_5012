@@ -27,6 +27,9 @@ class Theme
     #[ORM\ManyToMany(targetEntity: Article::class, inversedBy: 'themes')]
     private Collection $articles;
 
+    #[ORM\Column(length: 255)]
+    private ?string $police_url = null;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -93,6 +96,18 @@ class Theme
     public function removeArticle(Article $article): static
     {
         $this->articles->removeElement($article);
+
+        return $this;
+    }
+
+    public function getPoliceUrl(): ?string
+    {
+        return $this->police_url;
+    }
+
+    public function setPoliceUrl(string $police_url): static
+    {
+        $this->police_url = $police_url;
 
         return $this;
     }

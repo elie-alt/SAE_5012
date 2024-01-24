@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ColorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class ThemeCrudController extends AbstractCrudController
@@ -24,5 +25,7 @@ class ThemeCrudController extends AbstractCrudController
             ->setTargetFieldName('name');
 
         yield ColorField::new('color');
+
+        yield TextField::new('police_url');
     }
 }
