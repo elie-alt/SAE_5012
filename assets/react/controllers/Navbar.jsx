@@ -5,8 +5,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/app.css';
 
-import '../../styles/custom-bootstrap.css';
-
 
 function NavbarMenu(props) {
   return (
@@ -19,6 +17,7 @@ function NavbarMenu(props) {
             <Nav.Link href={props.LinkHome}>Accueil</Nav.Link>
             <Nav.Link href={props.LinkArticleShow}>Les articles</Nav.Link>
             <Nav.Link href={props.LinkSignOut}>Se déconnecter</Nav.Link>
+            <Nav.Link href={props.LinkAdmin}>Dashboard</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

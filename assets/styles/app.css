@@ -7,7 +7,14 @@ body {
   line-height: 1.7;
   color: #c4c3ca;
   overflow-x: hidden;
-  height: 60vh;
+}
+
+main {
+  height: 30vh;
+}
+
+.mainArticles{
+  height: 80vh;
 }
 
 a {

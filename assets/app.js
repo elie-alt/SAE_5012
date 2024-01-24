@@ -14,14 +14,15 @@ import './bootstrap';
 // Importer vos composants React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Article from './react/controllers/Article.jsx';
 import { ThemeProvider } from './theme-context';
-import Button from './react/controllers/Button';
+import ButtonTheme from './react/controllers/Button';
 
 
 // Gestion des composants React
 import { registerReactControllerComponents } from '@symfony/ux-react';
 import Header from './react/controllers/Header';
+import { Navbar } from 'react-bootstrap';
+import NavbarMenu from './react/controllers/NavbarConnect';
 registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(
         <React.StrictMode>
             <ThemeProvider>
-                <Button />
-                <Header />
+                <ButtonTheme />
+                <NavbarMenu />
             </ThemeProvider>
         </React.StrictMode>,
         document.getElementById('root')
