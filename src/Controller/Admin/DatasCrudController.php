@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Datas;
+use App\Form\Type\DatasType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -13,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\VichImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 
 class DatasCrudController extends AbstractCrudController
 {
@@ -21,27 +23,12 @@ class DatasCrudController extends AbstractCrudController
         return Datas::class;
     }
 
-    
-    public function configureCrud(Crud $crud): Crud
-    {
-        return $crud
-            ->setEntityLabelInSingular('CSV File')
-            ->setEntityLabelInPlural('CSV Files')
-            ->setSearchFields(['name', 'public/Datas']); // Champs utilisés pour la recherche
-    }
-
     public function configureFields(string $pageName): iterable
     {
-        $fields = [
-            TextField::new('name'),
-            UrlField::new('public/Datas')->setLabel('File path'),
-        ];
-
-        if ($pageName == Crud::PAGE_NEW) {
-            $fields[] = VichImageField::new('Name')->setFormTypeOptions(['required' => true]);
-        }
-
-        return $fields;
+        
+        yield TextField::new('name');
+        yield CollectionField::new('filename')
+            ->setEntryType(DatasType::class);
     }
     
 }
