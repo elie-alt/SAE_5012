@@ -23,19 +23,41 @@ import { registerReactControllerComponents } from '@symfony/ux-react';
 import Header from './react/controllers/Header';
 import { Navbar } from 'react-bootstrap';
 import NavbarMenu from './react/controllers/NavbarConnect';
+import Article from './react/controllers/Article';
+import Footer from './react/controllers/Footer';
 registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialiser le composant React et le rendre dans le DOM
     ReactDOM.render(
         <React.StrictMode>
             <ThemeProvider>
                 <ButtonTheme />
-                <NavbarMenu />
+                <Header />
+                {/* <NavbarMenu /> */}
+                {/* <Article
+                    articleTitle={article.title}
+                    articleDate={article.createdAt}
+                    articleImage={`/media/${article.featuredImage.filename}`}
+                    articleContent={article.content}
+                    articleComments={article.comments.length}
+                    articleCategory={article.categories}
+                    theme={theme}
+                /> */}
             </ThemeProvider>
         </React.StrictMode>,
-        document.getElementById('root')
+        document.getElementById('header')
     );
+
+    // ReactDOM.render(
+    //     <React.StrictMode>
+    //         <ThemeProvider>
+    //             <ButtonTheme />
+    //             <Footer />
+    //         </ThemeProvider>
+
+    //     </React.StrictMode>,
+    //     document.getElementById('footer')
+    // );
 
     const appInstance = new App();
     appInstance.handleCommentForm();

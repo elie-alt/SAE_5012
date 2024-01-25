@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ThemeContext } from '../../theme-context';
 
-export default function Header(props){
+export default function Header(props) {
   const { theme } = useContext(ThemeContext);
 
   return (
     <header className=" py-5" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
-    <Container className="px-5">
+      <Container className="px-5">
         <Row className="gx-5 align-items-center justify-content-center">
           <Col lg={8} xl={7} xxl={6}>
             <div className="my-5 text-center text-xl-start">
@@ -18,14 +18,18 @@ export default function Header(props){
                 Simplicité, flexibilité, puissance : donnez vie à votre vision du contenu web
               </p>
               <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                <Button className="btn btn-primary btn-lg px-4 me-sm-3" href={props.LinkSignIn}>
+                {/* <Button className="btn btn-primary btn-lg px-4 me-sm-3" href={props.LinkSignIn}>
+                  Démarrer
+                </Button> */}
+                <Button className="btn btn-primary btn-lg px-4 me-sm-3" href="http://localhost:8000/user/login">
                   Démarrer
                 </Button>
+                
               </div>
             </div>
           </Col>
           <Col xl={5} xxl={6} className="d-none d-xl-block text-center">
-            
+
           </Col>
         </Row>
       </Container>

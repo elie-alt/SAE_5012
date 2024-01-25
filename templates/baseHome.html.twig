@@ -19,7 +19,8 @@
     <div {{ react_component('NavbarConnect', { 'LinkAdmin': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
 {% endif %}
 
-<div {{ react_component('Header', {'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register')} )}}></div>
+{# <div {{ react_component('Header', {'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register')} )}}></div> #}
+<div id="header"> </div>
 
 <main class="mb-5">
     {% block body %}
@@ -32,6 +33,8 @@
 		<div {{ react_component('Button')}}></div>
 
 		<div {{ react_component('Footer')}}></div>
+
+<div id="footer"> </div>
 
 
 {% block javascripts %}

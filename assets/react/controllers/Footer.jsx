@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { ThemeContext } from '../../theme-context';
 
-export default function App(props) {
+export default function Footer(props) {
   const { theme } = useContext(ThemeContext);
 
   return (

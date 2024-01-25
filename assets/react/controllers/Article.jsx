@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ThemeContext } from '../../theme-context';
+
 
 const Article = (props) => {
     const { articleTitle, articleDate, articleImage, articleContent, articleComments,articleCategorie } = props;
+    const { theme } = useContext(ThemeContext);
+
     return (
 
         <div
-            class="col-lg-10 offset-lg-1">
+        className="col-lg-10 offset-lg-1" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
             <article>
                 <h1 className="fw-bolder mb-1  text-blue">{articleTitle}</h1>
 
-                <div class="fst-italic mb-2 text-blue">{articleDate} / {articleCategorie}</div>
+                <div className="fst-italic mb-2 text-blue">{articleDate} / {articleCategorie}</div>
 
                 <img className="img-fluid rounded-3 my-5" src={articleImage}></img>
-                <section class="mb-5">
+                <section className="mb-5">
                     {articleContent}
                 </section>
 

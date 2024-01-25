@@ -11,6 +11,8 @@
 				<section class="py-5">
 					<div class="container px-5 my-5">
 						<div class="row gx-5">
+
+
 							<div {{ react_component('Article', { 'articleTitle': article.title, 'articleCategory': article.categories,'articleImage': "/media/" ~ article.featuredImage.filename, 'articleContent' : article.content, 'articleDate' : article.createdAt|date('d M Y'), 'articleComments' : article.comments|length } ) }}></div>
 							{# <div {{ react_component('Article', { 'article': article} ) }}></div> ça ne marche pas pour l'instant#}
 
@@ -28,6 +30,13 @@
 										{% include 'comment/index.html.twig' with [comment] %}
 									{% endfor %}
 								</div>
+
+								{# <script>
+									var articleData = {{ article|json_encode|raw }};
+								</script>
+								<script src="./assets/app.js"></script> #}
+
+
 							</div>
 						</div>
 					</div>
