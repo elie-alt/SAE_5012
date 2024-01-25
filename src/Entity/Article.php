@@ -49,7 +49,7 @@ class Article implements TimeStampedInterface
     #[ORM\ManyToOne(inversedBy: 'articles')]
     private ?Datas $FeaturedData = null;
 
-    #[ORM\ManyToMany(targetEntity: Theme::class, mappedBy: 'articles')]
+    #[ORM\ManyToMany(targetEntity: Theme::class, inversedBy: 'articles')]
     private Collection $themes;
 
     public function __construct()

@@ -24,7 +24,7 @@ class Theme
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
-    #[ORM\ManyToMany(targetEntity: Article::class, inversedBy: 'themes')]
+    #[ORM\ManyToMany(targetEntity: Article::class, mappedBy: 'themes')]
     private Collection $articles;
 
     #[ORM\Column(length: 255)]
@@ -110,5 +110,10 @@ class Theme
         $this->police_url = $police_url;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }
