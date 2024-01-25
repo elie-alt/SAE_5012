@@ -1,20 +1,27 @@
-// assets/react/components/App.jsx
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../theme-context';
 
-function ButtonTheme() {
+function ButtonTheme(props) {
     const { theme, toggle, dark } = useContext(ThemeContext);
+    const { backgroundColorTheme } = props;
+
+    const containerStyle = {
+        backgroundColor: backgroundColorTheme || theme.backgroundColor,
+        color: theme.color
+    };
+
+    const buttonStyle = {
+        backgroundColor: backgroundColorTheme || theme.backgroundColor,
+        color: theme.color,
+        outline: 'none'
+    };
 
     return (
-        <div className="App" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
+        <div className="App" style={containerStyle}>
             <button
                 type="button"
                 onClick={toggle}
-                style={{
-                    backgroundColor: theme.backgroundColor,
-                    color: theme.color,
-                    outline: 'none'
-                }}
+                style={buttonStyle}
             >
                 Toggle to {!dark ? 'Dark' : 'Light'} theme
             </button>
