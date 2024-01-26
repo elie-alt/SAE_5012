@@ -21,7 +21,7 @@ function ButtonTheme(props) {
             <button
                 type="button"
                 onClick={toggle}
-                style={buttonStyle}
+                className="btn"
             >
                 Mettre le theme {!dark ? 'Foncé' : 'Clair'}
             </button>

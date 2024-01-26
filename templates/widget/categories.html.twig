@@ -1,6 +1,6 @@
 <div>
     <h4 class=" text-white text-center p-3">Catégories</h4>
-    <ol>
+    <ol class="list-unstyle">
         {% for category in categories %}
             <li>
                 <a class="text-decoration-none text-capitalize" style="color: {{category.color}}" href="{{ path('category_show', {slug: category.slug}) }}">{{ category.name }}</a>

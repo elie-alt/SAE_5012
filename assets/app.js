@@ -15,12 +15,12 @@ import './bootstrap';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from './theme-context';
-import ButtonTheme from './react/controllers/Button';
 
 
 // Gestion des composants React
 import { registerReactControllerComponents } from '@symfony/ux-react';
 import Header from './react/controllers/Header';
+
 registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,16 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('header')
     );
 
-    // ReactDOM.render(
-    //     <React.StrictMode>
-    //         <ThemeProvider>
-    //             <ButtonTheme />
-    //             <Footer />
-    //         </ThemeProvider>
-
-    //     </React.StrictMode>,
-    //     document.getElementById('footer')
-    // );
+    ReactDOM.render(
+        <React.StrictMode>
+        </React.StrictMode>,
+        document.getElementById('root')
+    );   
 
     const appInstance = new App();
     appInstance.handleCommentForm();

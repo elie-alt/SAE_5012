@@ -17,7 +17,6 @@
 							{# <div {{ react_component('Article', { 'article': article} ) }}></div> ça ne marche pas pour l'instant#}
 
 
-							<div id="root"></div>
 							{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 								<div class="comment-area col-10 offset-1">
 									{{ form(commentForm, {attr:{class:'comment-form'} }) }}
