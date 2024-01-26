@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(
         <React.StrictMode>
             <ThemeProvider>
-                <ButtonTheme />
                 <Header />
             </ThemeProvider>
         </React.StrictMode>,

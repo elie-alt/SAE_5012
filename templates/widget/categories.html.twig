@@ -3,7 +3,7 @@
     <ol>
         {% for category in categories %}
             <li>
-                <a class="text-decoration-none text-white" href="{{ path('category_show', {slug: category.slug}) }}">{{ category.name }}</a>
+                <a class="text-decoration-none text-capitalize" style="color: {{category.color}}" href="{{ path('category_show', {slug: category.slug}) }}">{{ category.name }}</a>
             </li>
         {% endfor %}
     </ol>
