@@ -3,12 +3,12 @@ import React from 'react';
 
 const themes = {
     dark: {
-        backgroundColor: 'black',
+        backgroundColor: '#102770',
         color: 'white'
     },
     light: {
         backgroundColor: 'white',
-        color: 'black'
+        color: '#102770'
     }
 };
 

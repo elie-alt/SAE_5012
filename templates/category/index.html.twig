@@ -5,7 +5,7 @@
 {% block body %}
     <main class="">
         <div>
-            <h3 class="text-black p-5">{{ category.name }}</h3>
+            <h3 class="p-5 text-capitalize" style="color: {{category.color}}">{{ category.name }}</h3>
             <div  id="article-list">
                 {% include 'article/list.html.twig' with { articles: category.articles } %}
             </div>

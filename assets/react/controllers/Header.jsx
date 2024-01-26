@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ThemeContext } from '../../theme-context';
+import ButtonTheme from './Button';
 
 export default function Header(props) {
   const { theme } = useContext(ThemeContext);
@@ -11,10 +12,10 @@ export default function Header(props) {
         <Row className="gx-5 align-items-center justify-content-center">
           <Col lg={8} xl={7} xxl={6}>
             <div className="my-5 text-center text-xl-start">
-              <h1 className="display-5 text-blue fw-bolder mb-2">
+              <h1 className="display-5 fw-bolder mb-2">
                 Créez des CMS sur mesure en un clin d'œil avec notre plateforme intuitive.
               </h1>
-              <p className="lead text-blue fw-normal  mb-4">
+              <p className="lead  fw-normal  mb-4">
                 Simplicité, flexibilité, puissance : donnez vie à votre vision du contenu web
               </p>
               <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
@@ -24,6 +25,7 @@ export default function Header(props) {
                 <Button className="btn btn-primary btn-lg px-4 me-sm-3" href="http://localhost:8000/user/login">
                   Démarrer
                 </Button>
+                <ButtonTheme />
                 
               </div>
             </div>
