@@ -10,11 +10,13 @@ body {
 }
 
 main {
-  height: 30vh;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .mainArticles{
-  height: 80vh;
+  min-height: 100vh; 
+  height: 100%;
 }
 
 a {
@@ -274,3 +276,4 @@ textarea {
 .comment-button-class {
   text-align: right;
 }
+
