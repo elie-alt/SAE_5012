@@ -1,3 +1,4 @@
+php intl --> enlever ;
 composer install
 npm install --force
 npm run build
@@ -8,7 +9,6 @@ composer req api
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load
-php intl --> enlever ;
 php -S localhost:8000 -t public/
 mdp_USER: 123456U
 mdp_SUBSCRIBER: 123456S

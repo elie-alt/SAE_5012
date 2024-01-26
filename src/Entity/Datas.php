@@ -18,8 +18,8 @@ class Datas
     #[ORM\Column]
     private ?int $id = null;
 
-    #[Vich\UploadableField(mapping: 'filename', fileNameProperty: 'Filename')]
-    private ?File $datasFile = null;
+    #[Vich\UploadableField(mapping: 'content', fileNameProperty: 'Filename')]
+    private ?\Symfony\Component\HttpFoundation\File\File $datasFile = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $Name = null;
@@ -43,13 +43,21 @@ class Datas
         return $this->id;
     }
 
-    public function setFile(?File $file): self
+    
+    public function getDatasFile(): ?\Symfony\Component\HttpFoundation\File\File 
     {
-        $this->file = $file;
+        return $this->datasFile;
+    }
+
+    public function setDatasFile(?\Symfony\Component\HttpFoundation\File\File $file): self
+    {
+        $this->datasFile = $file;
 
         if (null != $file){
             $this->updatedAt = new \DateTimeImmutable();
         }
+
+        dd($file);
 
         return $this;
     }

@@ -12,8 +12,9 @@ class DatasType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $builder->add('filename', VichFileType::class, [
+        $builder->add('datasFile', VichFileType::class, [
             'label' => 'Datas',
+            'data_class' => null,
         ]);
     }
 
