@@ -12,7 +12,7 @@ function NavbarMenu(props) {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Navbar expand="lg" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
+    <Navbar bg="dark" expand="lg" variant="dark" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
       <Container>
         <Navbar.Brand href={props.LinkHome}>CMS</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarSupportedContent" />

@@ -7,7 +7,7 @@
         <div>
             <h3>{{ category.name }}</h3>
             <div  id="article-list">
-                {% include 'article/list.html.twig' with { articles: articles } %}
+                {% include 'article/list.html.twig' with { articles: category.articles } %}
             </div>
         </div>
     </main>

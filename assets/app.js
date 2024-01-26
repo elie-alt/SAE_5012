@@ -21,10 +21,6 @@ import ButtonTheme from './react/controllers/Button';
 // Gestion des composants React
 import { registerReactControllerComponents } from '@symfony/ux-react';
 import Header from './react/controllers/Header';
-import { Navbar } from 'react-bootstrap';
-import NavbarMenu from './react/controllers/NavbarConnect';
-import Article from './react/controllers/Article';
-import Footer from './react/controllers/Footer';
 registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,16 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <ThemeProvider>
                 <ButtonTheme />
                 <Header />
-                {/* <NavbarMenu /> */}
-                {/* <Article
-                    articleTitle={article.title}
-                    articleDate={article.createdAt}
-                    articleImage={`/media/${article.featuredImage.filename}`}
-                    articleContent={article.content}
-                    articleComments={article.comments.length}
-                    articleCategory={article.categories}
-                    theme={theme}
-                /> */}
             </ThemeProvider>
         </React.StrictMode>,
         document.getElementById('header')
