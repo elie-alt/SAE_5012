@@ -3,9 +3,9 @@
 {% block title %}{{category.name}}{% endblock %}
 
 {% block body %}
-    <main class="container">
+    <main class="">
         <div>
-            <h3>{{ category.name }}</h3>
+            <h3 class="text-black p-5">{{ category.name }}</h3>
             <div  id="article-list">
                 {% include 'article/list.html.twig' with { articles: category.articles } %}
             </div>

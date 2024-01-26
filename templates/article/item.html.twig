@@ -1,17 +1,17 @@
 {% set article_show = path('article_show', { 'slug': article.slug }) %}
 
-	<article class=" bg-light py-3 pb-4">
+	<article class=" bg-light py-3 pb-4 ">
     <div class="row">
-        <div class="col-md-4 offset-md-1 text-blue">
+        <div class="col-4 offset-md-1 text-blue">
             {% if article.featuredImage %}
                 <a href="{{ path('article_show', { 'slug': article.slug }) }}">
                     <img src="/media/{{ article.featuredImage.filename }}" alt="{{ article.featuredImage.altText }}" loading="lazy" width="350" height="205" class="object-fit-cover border rounded" >
                 </a>
             {% endif %}
         </div>
-        <div class="col-md-6 text-blue">
+        <div class="col-6 text-blue">
             <h2 class="article-title">
-                <a href="{{ path('article_show', { 'slug': article.slug }) }}" class="text-decoration-none text-blue">{{ article.title }}</a>
+                <a href="{{ path('article_show', { 'slug': article.slug }) }}" class="text-decoration-none text-blue ">{{ article.title }}</a>
             </h2>
             <p>
                 {{ article.createdAt|date('d M Y') }} 
