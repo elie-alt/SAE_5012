@@ -11,10 +11,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\VichImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\VichFileField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class DatasCrudController extends AbstractCrudController
 {
@@ -25,10 +26,8 @@ class DatasCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        
         yield TextField::new('name');
-        yield CollectionField::new('filename')
-            ->setEntryType(DatasType::class);
+        yield Field::new('content')
+            ->setFormType(DatasType::class);
     }
-    
 }

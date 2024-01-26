@@ -10,8 +10,8 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Model\TimeStampedInterface;
 
-#[ORM\Entity(repositoryClass: ArticleRepository::class)]
 #[ApiResource]
+#[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article implements TimeStampedInterface
 {
     #[ORM\Id]

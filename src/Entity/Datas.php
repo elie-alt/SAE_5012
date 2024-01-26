@@ -43,8 +43,7 @@ class Datas
         return $this->id;
     }
 
-    
-    public function getDatasFile(): ?\Symfony\Component\HttpFoundation\File\File 
+    public function getDatasFile(): ?\Symfony\Component\HttpFoundation\File\File
     {
         return $this->datasFile;
     }
@@ -56,8 +55,6 @@ class Datas
         if (null != $file){
             $this->updatedAt = new \DateTimeImmutable();
         }
-
-        dd($file);
 
         return $this;
     }
@@ -81,6 +78,7 @@ class Datas
 
     public function setFilename(string $Filename): static
     {
+        dd($Filename);
         $this->Filename = $Filename;
 
         return $this;
@@ -129,7 +127,7 @@ class Datas
     public function setContent(array $content): static
     {
         $this->content = $content;
-
+        dd($content);
         return $this;
     }
 }
