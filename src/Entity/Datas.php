@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\DatasRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -28,6 +29,9 @@ class Datas
 
     #[ORM\OneToMany(mappedBy: 'FeaturedData', targetEntity: Article::class)]
     private Collection $articles;
+
+    #[ORM\Column(type: Types::ARRAY)]
+    private array $content = [];
 
     public function __construct()
     {
@@ -107,5 +111,17 @@ class Datas
     public function __toString()
     {
         return $this->filename;
+    }
+
+    public function getContent(): array
+    {
+        return $this->content;
+    }
+
+    public function setContent(array $content): static
+    {
+        $this->content = $content;
+
+        return $this;
     }
 }
