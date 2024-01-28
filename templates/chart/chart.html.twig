@@ -1,14 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div>
+    <div class="row">
+    <div class="col-2 m-5">
         {{ form_start(form) }}
         {{ form_row(form.csvFile) }}
-        <button type="submit">Télécharger et Afficher le Graphique</button>
+        <button class="btn w-100 mt-3 h-100" type="submit">Télécharger et Afficher le Graphique</button>
+        </div>
         {{ form_end(form) }}
         <br>
+        <div class="col-9">
         {% if chart is defined and chart is not null %}
             {{ render_chart(chart) }}
         {% endif %}
+        </div>
+    </div>
     </div>
 {% endblock %}
