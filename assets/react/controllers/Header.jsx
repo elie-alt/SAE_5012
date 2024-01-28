@@ -2,13 +2,15 @@ import React, { useContext } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ThemeContext } from '../../theme-context';
 import ButtonTheme from './Button';
+import MyComponent from './MyComponent';
+import Three from './three';
 
 export default function Header(props) {
   const { theme } = useContext(ThemeContext);
 
   return (
     <header className=" py-5" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
-      <Container className="px-5">
+      <Container>
         <Row className="gx-5 align-items-center justify-content-center">
           <Col lg={8} xl={7} xxl={6}>
             <div className="my-5 text-center text-xl-start">
@@ -30,8 +32,8 @@ export default function Header(props) {
               </div>
             </div>
           </Col>
-          <Col xl={5} xxl={6} className="d-none d-xl-block text-center">
-
+          <Col xl={5} xxl={6} className="d-none d-xl-block text-center p-0">
+            <Three></Three>
           </Col>
         </Row>
       </Container>
