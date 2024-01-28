@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Iris dataset</h1>
-
-    {% if chart is null %}
-        <p>Aucun fichier n'a été téléchargé.</p>
-    {% else %}
-        {{ render_chart(chart) }}
-    {% endif %}
-    <form action="/chart" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" />
-        <input type="submit" value="Télécharger" />
-    </form>
+    <div>
+        {{ form_start(form) }}
+        {{ form_row(form.csvFile) }}
+        <button type="submit">Télécharger et Afficher le Graphique</button>
+        {{ form_end(form) }}
+        <br>
+        {% if chart is defined %}
+            {{ render_chart(chart) }}
+        {% endif %}
+    </div>
 {% endblock %}

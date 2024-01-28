@@ -14,7 +14,7 @@
 <body>
 
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-    <div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkHome': path('app_home'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles'), 'LinkAdmin': path('admin') } ) }}></div>
+    <div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkHome': path('app_home'), 'LinkDatas': path('app_chart'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles'), 'LinkAdmin': path('admin') } ) }}></div>
     <div id="header"> </div>
 
     <main class="mb-5">
@@ -23,17 +23,7 @@
             <section class="col-10 m-0 p-0">
                 <div id="article-list">
                     {% include 'article/list.html.twig' with { articles } %}
-                </div>  
-                <div>
-        {{ form_start(form) }}
-        {{ form_row(form.csvFile) }}
-        <button type="submit">Télécharger et Afficher le Graphique</button>
-        {{ form_end(form) }}
-        <br>
-        {% if chart is defined %}
-            {{ render_chart(chart) }}
-        {% endif %}
-    </div> 
+                </div>   
             </section>
             <section class="col-2 bg-blue  m-0">
                 {% include "widget/categories.html.twig" %}
@@ -41,7 +31,7 @@
         </div>
         {% endblock %}
 {% else %}
-    <div {{ react_component('NavbarConnect', { 'LinkAdmin': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
+    <div {{ react_component('NavbarConnect', { 'LinkAdmin': path('admin'), 'LinkDatas': path('app_chart'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
     <div id="header"> </div>
     <main>
     </main>

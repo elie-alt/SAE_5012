@@ -26,54 +26,52 @@ class HomeController extends AbstractController
     public function index(Request $request, ArticleService $articleService, CategoryRepository $categoryrepo, ChartBuilderInterface $chartBuilder): Response
     {
 
-        $form = $this->createForm(ChartFormType::class);
-        $form->handleRequest($request);
+        // $form = $this->createForm(ChartFormType::class);
+        // $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            /** @var UploadedFile $csvFile */
-            $csvFile = $form->get('csvFile')->getData();
+        // if ($form->isSubmitted() && $form->isValid()) {
+        //     /** @var UploadedFile $csvFile */
+        //     $csvFile = $form->get('csvFile')->getData();
 
-            if ($csvFile) {
-                $csvFile->move('Datas', 'uploaded_file.csv');
+        //     if ($csvFile) {
+        //         $csvFile->move('Datas', 'uploaded_file.csv');
 
-                // Lisez le contenu du fichier CSV
-                $csvContent = file_get_contents('Datas/uploaded_file.csv');
-                $lines = explode("\n", $csvContent);
+        //         $csvContent = file_get_contents('Datas/uploaded_file.csv');
+        //         $lines = explode("\n", $csvContent);
 
-                $data = [];
-                foreach ($lines as $line) {
-                    $fields = explode(';', $line);
-                    $data[] = [
-                        'field1' => $fields[0],
-                        'field2' => $fields[1],
-                        'field3' => $fields[2],
-                        'field4' => $fields[3],
-                        'label'  => $fields[4],
-                    ];
-                }
+        //         $data = [];
+        //         foreach ($lines as $line) {
+        //             $fields = explode(';', $line);
+        //             $data[] = [
+        //                 'field1' => $fields[0],
+        //                 'field2' => $fields[1],
+        //                 'field3' => $fields[2],
+        //                 'field4' => $fields[3],
+        //                 'label'  => $fields[4],
+        //             ];
+        //         }
 
-                $chartData = [
-                    'labels'   => array_column($data, 'label'),
-                    'datasets' => [
-                        [
-                            'label'           => 'champ',
-                            'data'            => array_column($data, 'field1'),
-                            'borderColor'     => 'rgb(75, 192, 192)',
-                            'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
-                            'fill'            => false,
-                        ],
-                    ],
-                ];
+        //         $chartData = [
+        //             'labels'   => array_column($data, 'label'),
+        //             'datasets' => [
+        //                 [
+        //                     'label'           => 'champ',
+        //                     'data'            => array_column($data, 'field1'),
+        //                     'borderColor'     => 'rgb(75, 192, 192)',
+        //                     'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
+        //                     'fill'            => false,
+        //                 ],
+        //             ],
+        //         ];
 
-                // Créez le graphique de type ligne
-                $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
-                $chart->setData($chartData);
-            }
-        }
+        //         $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
+        //         $chart->setData($chartData);
+        //     }
+        // }
 
         return $this->render('baseHome.html.twig', [
-            'form' => $form->createView(),
-            'chart' => isset($chart) ? $chart : null,
+            // 'form' => $form->createView(),
+            // 'chart' => isset($chart) ? $chart : null,
             'articles' => $articleService->getPaginatorArticles(),
             'categories' => $categoryrepo->findAll(),
         ]);
