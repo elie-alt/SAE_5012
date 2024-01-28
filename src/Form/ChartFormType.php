@@ -14,15 +14,7 @@ class ChartFormType extends AbstractType
     {
         $builder
             ->add('csvFile', FileType::class, [
-                'label' => 'Importer un fichier',
-            ])
-            ->add('selectedField', ChoiceType::class, [
-                'label'   => 'Choisir un champ',
-                'choices' => [
-                    'Field 1' => 'Iris-setosa',
-                    'Field 2' => 'Iris-versicolor',
-                    'Field 3' => 'Iris-virginica',
-                ],
+                'label' => 'CSV File',
             ]);
     }
 

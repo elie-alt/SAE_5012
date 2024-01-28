@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Repository\ArticleRepository;
 use App\Repository\CategoryRepository;
+use App\Entity\Datas;
 use App\Repository\CommentRepository;
 use App\Service\ArticleService;
 use App\Form\ChartFormType;
 use App\Repository\ThemeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,43 +34,39 @@ class HomeController extends AbstractController
             $csvFile = $form->get('csvFile')->getData();
 
             if ($csvFile) {
-                $csvContent = file_get_contents($csvFile->getPathname());
+                $csvFile->move('Datas', 'uploaded_file.csv');
+
+                // Lisez le contenu du fichier CSV
+                $csvContent = file_get_contents('Datas/uploaded_file.csv');
                 $lines = explode("\n", $csvContent);
+
                 $data = [];
+                foreach ($lines as $line) {
+                    $fields = explode(';', $line);
+                    $data[] = [
+                        'field1' => $fields[0],
+                        'field2' => $fields[1],
+                        'field3' => $fields[2],
+                        'field4' => $fields[3],
+                        'label'  => $fields[4],
+                    ];
+                }
 
-        foreach ($lines as $line) {
-            $fields = explode(';', $line);
-            $data[] = [
-                'field1' => $fields[0],
-                'field2' => $fields[1],
-                'field3' => $fields[2],
-                'field4' => $fields[3],
-                'label'  => $fields[4],
-            ];
-        }
+                $chartData = [
+                    'labels'   => array_column($data, 'label'),
+                    'datasets' => [
+                        [
+                            'label'           => 'champ',
+                            'data'            => array_column($data, 'field1'),
+                            'borderColor'     => 'rgb(75, 192, 192)',
+                            'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
+                            'fill'            => false,
+                        ],
+                    ],
+                ];
 
-        $selectedField = $form->get('selectedField')->getData();
-
-        $filteredData = array_filter($data, function ($row) use ($selectedField) {
-            return $row['label'] === $selectedField;
-        });
-
-        // dd($selectedField);
-
-        $chartData = [
-            'labels'   => array_column($data, 'label'),
-            'datasets' => [
-                [
-                    'label'           => 'Field 1',
-                    'data'            => array_column($filteredData, $selectedField),
-                    'borderColor'     => 'rgb(75, 192, 192)',
-                    'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
-                    'fill'            => false,
-                ],
-            ],
-        ];
-
-        $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
+                // Créez le graphique de type ligne
+                $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
                 $chart->setData($chartData);
             }
         }
