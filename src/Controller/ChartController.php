@@ -2,10 +2,17 @@
 
 namespace App\Controller;
 
+use App\Form\ChartFormType;
+use App\Repository\CategoryRepository;
+use App\Service\ArticleService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Builder\Line;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\UX\Chartjs\Model\Chart;
 
 class ChartController extends AbstractController
 {

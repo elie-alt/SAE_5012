@@ -7,7 +7,7 @@
         <button type="submit">Télécharger et Afficher le Graphique</button>
         {{ form_end(form) }}
         <br>
-        {% if chart is defined %}
+        {% if chart is defined and chart is not null %}
             {{ render_chart(chart) }}
         {% endif %}
     </div>
