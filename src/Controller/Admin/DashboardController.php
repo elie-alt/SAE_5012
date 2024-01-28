@@ -68,18 +68,19 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Ajouter', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW),
             ]);
         }
-        if ($this->isGranted('ROLE_FOURNISSEUR')){
-            yield MenuItem::subMenu('Datas', 'fas fa-photo-video')->setSubItems([
-                MenuItem::linkToCrud('Médiathèque', 'fas fa-photo-video', Datas::class),
-                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Datas::class)->setAction(Crud::PAGE_NEW),
-            ]);
-        }
         if ($this->isGranted('ROLE_DESIGNEUR')){
             yield MenuItem::subMenu('Themes', 'fas fa-photo-video')->setSubItems([
                 MenuItem::linkToCrud('Bibliothèque', 'fas fa-photo-video', Theme::class),
                 MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Theme::class)->setAction(Crud::PAGE_NEW),
             ]);
         }
+        if ($this->isGranted('ROLE_FOURNISSEUR')){
+            yield MenuItem::subMenu('Datas', 'fas fa-photo-video')->setSubItems([
+                MenuItem::linkToCrud('Médiathèque', 'fas fa-photo-video', Datas::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Datas::class)->setAction(Crud::PAGE_NEW),
+            ]);
+        }
+
 
     }
 
