@@ -41,7 +41,7 @@
         "symfony/string": "6.0.*",
         "symfony/translation": "6.0.*",
         "symfony/twig-bundle": "6.0.*",
-        "symfony/ux-chartjs": "*",
+        "symfony/ux-chartjs": "^2.13",
         "symfony/ux-react": "*",
         "symfony/validator": "6.0.*",
         "symfony/web-link": "6.0.*",

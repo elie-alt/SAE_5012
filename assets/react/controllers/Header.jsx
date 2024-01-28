@@ -15,7 +15,7 @@ export default function Header(props) {
           <Col lg={8} xl={7} xxl={6}>
             <div className="my-5 text-center text-xl-start">
               <h1 className="display-5 fw-bolder mb-2">
-                Créez des CMS sur mesure en un clin d'œil avec notre plateforme intuitive.
+              Créez des articles en un clin d'œil avec CMS.
               </h1>
               <p className="lead  fw-normal  mb-4">
                 Simplicité, flexibilité, puissance : donnez vie à votre vision du contenu web
