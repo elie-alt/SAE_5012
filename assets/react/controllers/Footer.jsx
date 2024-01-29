@@ -15,7 +15,7 @@ export default function Footer(props) {
             <span className="text-white mx-1">&middot;</span>
             <a className="link-light small" href="#!">Terms</a>
             <span className="text-white mx-1">&middot;</span> */}
-            <a className="link-light small" href="#!">Contactez-nous</a>
+            <a className="link-light small" href={props.LinkHome}>Contactez-nous</a>
           </div>
         </div>
       </Container>
