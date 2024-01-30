@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ThemeContext } from '../../theme-context';
 import ButtonTheme from './Button';
-import MyComponent from './MyComponent';
 import Three from './three';
 
 export default function Header(props) {
