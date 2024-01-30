@@ -1,9 +1,9 @@
 // assets/theme-context.js
 import React from 'react';
-import Lfront from "../public/media/Lfront.png";
-import Lback from "../public/media/Lback.png";
-import Dfront from "../public/media/Dfront.png";
-import Dback from "../public/media/Dback.png";
+import Lfront from "../public/media/Lfront.webp";
+import Lback from "../public/media/Lback.webp";
+import Dfront from "../public/media/Dfront.webp";
+import Dback from "../public/media/Dback.webp";
 
 const themes = {
     dark: {
