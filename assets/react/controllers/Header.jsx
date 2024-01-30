@@ -12,7 +12,7 @@ export default function Header(props) {
     <header className=" py-5" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
       <Container>
         <Row className="gx-5 align-items-center justify-content-center">
-          <Col lg={8} xl={7} xxl={6}>
+          <Col md={12} lg={8} xl={7} xxl={6}>
             <div className="my-5 text-center text-xl-start">
               <h1 className="display-5 fw-bolder mb-2">
               Créez des articles en un clin d'œil avec CMS.
@@ -32,7 +32,7 @@ export default function Header(props) {
               </div>
             </div>
           </Col>
-          <Col xl={5} xxl={6} className="d-none d-xl-block text-center p-0">
+          <Col md={12} xl={5} xxl={6} className="d-xl-block text-center p-0">
             <Three></Three>
           </Col>
         </Row>

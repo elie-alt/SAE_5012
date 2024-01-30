@@ -20,9 +20,9 @@
 {# {{ react_component('ThemeProvider', {}, { 'componentName': 'ThemeProvider' }) }} #}
 
 		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-			<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkHome': path('app_home'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
+			<div {{ react_component('Navbar', { 'LinkBrand': path('admin'), 'LinkDatas': path('app_chart'), 'LinkHome': path('app_home'), 'LinkSignOut': path('app_logout'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
 		{% else %}
-			<div {{ react_component('NavbarConnect', { 'LinkBrand': path('admin'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
+			<div {{ react_component('NavbarConnect', { 'LinkBrand': path('admin'), 'LinkDatas': path('app_chart'), 'LinkSignIn': path('app_login'), 'LinkSignUp':path('app_register'), 'LinkHome': path('app_home'), 'LinkArticleShow': path('app_home_articles') } ) }}></div>
 		{% endif %}
 
 
